@@ -1,0 +1,11 @@
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\bin\Debug\net7.0\Configuration.deps.json
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\bin\Debug\net7.0\Configuration.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\bin\Debug\net7.0\Configuration.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\obj\Debug\net7.0\Configuration.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\obj\Debug\net7.0\Configuration.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\obj\Debug\net7.0\Configuration.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\obj\Debug\net7.0\Configuration.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\obj\Debug\net7.0\Configuration.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\obj\Debug\net7.0\refint\Configuration.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\obj\Debug\net7.0\Configuration.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\obj\Debug\net7.0\ref\Configuration.dll

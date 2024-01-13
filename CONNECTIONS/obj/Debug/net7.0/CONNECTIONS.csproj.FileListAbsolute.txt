@@ -1,0 +1,12 @@
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\bin\Debug\net7.0\CONNECTIONS.deps.json
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\bin\Debug\net7.0\CONNECTIONS.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\bin\Debug\net7.0\CONNECTIONS.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.0\CONNECTIONS.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.0\CONNECTIONS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.0\CONNECTIONS.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.0\CONNECTIONS.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.0\CONNECTIONS.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.0\CONNECTIONS.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.0\refint\CONNECTIONS.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.0\CONNECTIONS.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.0\ref\CONNECTIONS.dll
