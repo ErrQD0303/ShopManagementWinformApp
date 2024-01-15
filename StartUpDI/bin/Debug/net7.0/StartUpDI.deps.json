@@ -1054,8 +1054,16 @@
         }
       },
       "MODEL/1.0.0": {
+        "dependencies": {
+          "WFAttribute": "1.0.0"
+        },
         "runtime": {
           "MODEL.dll": {}
+        }
+      },
+      "WFAttribute/1.0.0": {
+        "runtime": {
+          "WFAttribute.dll": {}
         }
       }
     }
@@ -1735,6 +1743,11 @@
       "sha512": ""
     },
     "MODEL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WFAttribute/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

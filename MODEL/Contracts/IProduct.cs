@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WFAttribute;
 
 namespace MODEL.Contracts
 {
@@ -11,6 +12,7 @@ namespace MODEL.Contracts
         #region properties
         long ID { get; set; }
         string ProductID { get; set; }
+        [Name]
         string Name { get; set; }
         string Description { get; set; }
         #endregion

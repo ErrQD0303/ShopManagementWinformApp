@@ -9,3 +9,4 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\obj\Debug\net
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\obj\Debug\net7.0\refint\Configuration.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\obj\Debug\net7.0\Configuration.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\obj\Debug\net7.0\ref\Configuration.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Configuration\obj\Debug\net7.0\Configuration.sourcelink.json

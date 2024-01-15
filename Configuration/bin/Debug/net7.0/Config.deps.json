@@ -1,0 +1,61 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Config/1.0.0": {
+        "dependencies": {
+          "MODEL": "1.0.0",
+          "WFAttribute": "1.0.0",
+          "WFException": "1.0.0"
+        },
+        "runtime": {
+          "Config.dll": {}
+        }
+      },
+      "MODEL/1.0.0": {
+        "dependencies": {
+          "WFAttribute": "1.0.0"
+        },
+        "runtime": {
+          "MODEL.dll": {}
+        }
+      },
+      "WFAttribute/1.0.0": {
+        "runtime": {
+          "WFAttribute.dll": {}
+        }
+      },
+      "WFException/1.0.0": {
+        "runtime": {
+          "WFException.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Config/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MODEL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WFAttribute/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WFException/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

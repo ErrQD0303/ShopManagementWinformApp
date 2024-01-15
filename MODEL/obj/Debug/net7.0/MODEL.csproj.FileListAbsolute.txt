@@ -9,3 +9,8 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\MODEL\obj\Debug\net7.0\MODE
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\MODEL\obj\Debug\net7.0\refint\MODEL.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\MODEL\obj\Debug\net7.0\MODEL.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\MODEL\obj\Debug\net7.0\ref\MODEL.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\MODEL\obj\Debug\net7.0\MODEL.sourcelink.json
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\MODEL\bin\Debug\net7.0\WFAttribute.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\MODEL\bin\Debug\net7.0\WFAttribute.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\MODEL\obj\Debug\net7.0\MODEL.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\MODEL\obj\Debug\net7.0\MODEL.csproj.CopyComplete

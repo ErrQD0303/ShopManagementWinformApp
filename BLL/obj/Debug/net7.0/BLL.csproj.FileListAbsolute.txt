@@ -1,10 +1,8 @@
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\BLL.deps.json
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\BLL.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\BLL.pdb
-C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\Configuration.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\DAL.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\MODEL.dll
-C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\Configuration.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\DAL.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\MODEL.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\obj\Debug\net7.0\BLL.csproj.AssemblyReference.cache
@@ -17,3 +15,10 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\obj\Debug\net7.0\BLL.dl
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\obj\Debug\net7.0\refint\BLL.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\obj\Debug\net7.0\BLL.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\obj\Debug\net7.0\ref\BLL.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\obj\Debug\net7.0\BLL.sourcelink.json
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\Config.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\WFAttribute.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\WFException.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\Config.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\WFAttribute.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\WFException.pdb

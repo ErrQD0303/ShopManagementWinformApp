@@ -17,3 +17,6 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\StartUpDI\obj\Debug\net7.0\
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\StartUpDI\obj\Debug\net7.0\refint\StartUpDI.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\StartUpDI\obj\Debug\net7.0\StartUpDI.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\StartUpDI\obj\Debug\net7.0\ref\StartUpDI.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\StartUpDI\bin\Debug\net7.0\WFAttribute.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\StartUpDI\bin\Debug\net7.0\WFAttribute.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\StartUpDI\obj\Debug\net7.0\StartUpDI.sourcelink.json

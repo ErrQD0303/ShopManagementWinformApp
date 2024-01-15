@@ -1773,7 +1773,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Configuration": "1.0.0",
+          "Config": "1.0.0",
           "DAL": "1.0.0",
           "MODEL": "1.0.0"
         },
@@ -1784,14 +1784,19 @@
           "bin/placeholder/BLL.dll": {}
         }
       },
-      "Configuration/1.0.0": {
+      "Config/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "MODEL": "1.0.0",
+          "WFAttribute": "1.0.0",
+          "WFException": "1.0.0"
+        },
         "compile": {
-          "bin/placeholder/Configuration.dll": {}
+          "bin/placeholder/Config.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Configuration.dll": {}
+          "bin/placeholder/Config.dll": {}
         }
       },
       "CONNECTIONS/1.0.0": {
@@ -1815,6 +1820,8 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "AutoFactory": "6.0.0",
+          "CONNECTIONS": "1.0.0",
+          "Config": "1.0.0",
           "MODEL": "1.0.0",
           "MySql.Data": "8.2.0"
         },
@@ -1828,6 +1835,10 @@
       "MODEL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "AutoFactory": "6.0.0",
+          "WFAttribute": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/MODEL.dll": {}
         },
@@ -1840,6 +1851,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "AutoFactory": "6.0.0",
+          "BLL": "1.0.0",
           "CONNECTIONS": "1.0.0",
           "DAL": "1.0.0"
         },
@@ -1848,6 +1860,26 @@
         },
         "runtime": {
           "bin/placeholder/StartUpDI.dll": {}
+        }
+      },
+      "WFAttribute/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/WFAttribute.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WFAttribute.dll": {}
+        }
+      },
+      "WFException/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/WFException.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WFException.dll": {}
         }
       }
     }
@@ -6000,10 +6032,10 @@
       "path": "../BLL/BLL.csproj",
       "msbuildProject": "../BLL/BLL.csproj"
     },
-    "Configuration/1.0.0": {
+    "Config/1.0.0": {
       "type": "project",
-      "path": "../Configuration/Configuration.csproj",
-      "msbuildProject": "../Configuration/Configuration.csproj"
+      "path": "../Configuration/Config.csproj",
+      "msbuildProject": "../Configuration/Config.csproj"
     },
     "CONNECTIONS/1.0.0": {
       "type": "project",
@@ -6024,12 +6056,25 @@
       "type": "project",
       "path": "../StartUpDI/StartUpDI.csproj",
       "msbuildProject": "../StartUpDI/StartUpDI.csproj"
+    },
+    "WFAttribute/1.0.0": {
+      "type": "project",
+      "path": "../WFAttribute/WFAttribute.csproj",
+      "msbuildProject": "../WFAttribute/WFAttribute.csproj"
+    },
+    "WFException/1.0.0": {
+      "type": "project",
+      "path": "../Exception/WFException.csproj",
+      "msbuildProject": "../Exception/WFException.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
       "AutoFactory >= 6.0.0",
       "BLL >= 1.0.0",
+      "CONNECTIONS >= 1.0.0",
+      "Config >= 1.0.0",
+      "MODEL >= 1.0.0",
       "StartUpDI >= 1.0.0"
     ]
   },
@@ -6068,6 +6113,15 @@
           "projectReferences": {
             "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\BLL\\BLL.csproj": {
               "projectPath": "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\BLL\\BLL.csproj"
+            },
+            "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\Configuration\\Config.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\Configuration\\Config.csproj"
+            },
+            "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\CONNECTIONS\\CONNECTIONS.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\CONNECTIONS\\CONNECTIONS.csproj"
+            },
+            "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\MODEL\\MODEL.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\MODEL\\MODEL.csproj"
             },
             "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\StartUpDI\\StartUpDI.csproj": {
               "projectPath": "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\StartUpDI\\StartUpDI.csproj"

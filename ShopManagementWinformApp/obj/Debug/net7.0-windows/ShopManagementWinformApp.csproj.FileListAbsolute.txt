@@ -31,14 +31,12 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bi
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\runtimes\win-x64\native\krbcc64.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\BLL.dll
-C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\Configuration.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\CONNECTIONS.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\DAL.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\MODEL.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\StartUpDI.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\BLL.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\StartUpDI.pdb
-C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\Configuration.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\CONNECTIONS.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\DAL.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\MODEL.pdb
@@ -55,3 +53,10 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\ob
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.genruntimeconfig.cache
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ref\ShopManagementWinformApp.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\Config.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\WFAttribute.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\WFException.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\Config.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\WFAttribute.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\WFException.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.sourcelink.json

@@ -14,6 +14,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj" />
+    <ProjectReference Include="..\Configuration\Config.csproj" />
+    <ProjectReference Include="..\CONNECTIONS\CONNECTIONS.csproj" />
+    <ProjectReference Include="..\MODEL\MODEL.csproj" />
     <ProjectReference Include="..\StartUpDI\StartUpDI.csproj" />
   </ItemGroup>
 

@@ -3,7 +3,7 @@ using System.Configuration;
 
 namespace MODEL
 {
-    internal class Product : IProduct
+    public class Product : IProduct
     {
         #region fields
         private long _id;

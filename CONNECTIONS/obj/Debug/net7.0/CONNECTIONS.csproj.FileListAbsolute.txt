@@ -10,3 +10,4 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.0\refint\CONNECTIONS.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.0\CONNECTIONS.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.0\ref\CONNECTIONS.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\obj\Debug\net7.0\CONNECTIONS.sourcelink.json

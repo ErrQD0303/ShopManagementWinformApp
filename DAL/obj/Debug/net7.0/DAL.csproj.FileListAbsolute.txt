@@ -13,3 +13,6 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\obj\Debug\net7.0\DAL.dl
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\obj\Debug\net7.0\refint\DAL.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\obj\Debug\net7.0\DAL.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\obj\Debug\net7.0\ref\DAL.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\obj\Debug\net7.0\DAL.sourcelink.json
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\bin\Debug\net7.0\WFAttribute.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\bin\Debug\net7.0\WFAttribute.pdb

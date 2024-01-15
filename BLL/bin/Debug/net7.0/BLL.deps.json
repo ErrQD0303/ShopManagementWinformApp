@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "BLL/1.0.0": {
         "dependencies": {
-          "Configuration": "1.0.0",
+          "Config": "1.0.0",
           "DAL": "1.0.0",
           "MODEL": "1.0.0"
         },
@@ -907,9 +907,14 @@
           }
         }
       },
-      "Configuration/1.0.0": {
+      "Config/1.0.0": {
+        "dependencies": {
+          "MODEL": "1.0.0",
+          "WFAttribute": "1.0.0",
+          "WFException": "1.0.0"
+        },
         "runtime": {
-          "Configuration.dll": {}
+          "Config.dll": {}
         }
       },
       "DAL/1.0.0": {
@@ -923,8 +928,21 @@
         }
       },
       "MODEL/1.0.0": {
+        "dependencies": {
+          "WFAttribute": "1.0.0"
+        },
         "runtime": {
           "MODEL.dll": {}
+        }
+      },
+      "WFAttribute/1.0.0": {
+        "runtime": {
+          "WFAttribute.dll": {}
+        }
+      },
+      "WFException/1.0.0": {
+        "runtime": {
+          "WFException.dll": {}
         }
       }
     }
@@ -1530,7 +1548,7 @@
       "path": "zstdsharp.port/0.7.1",
       "hashPath": "zstdsharp.port.0.7.1.nupkg.sha512"
     },
-    "Configuration/1.0.0": {
+    "Config/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1541,6 +1559,16 @@
       "sha512": ""
     },
     "MODEL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WFAttribute/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WFException/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

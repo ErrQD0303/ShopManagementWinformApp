@@ -1,0 +1,12 @@
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\bin\Debug\net7.0\WFAttribute.deps.json
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\bin\Debug\net7.0\WFAttribute.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\bin\Debug\net7.0\WFAttribute.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.0\WFAttribute.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.0\WFAttribute.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.0\WFAttribute.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.0\WFAttribute.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.0\WFAttribute.sourcelink.json
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.0\WFAttribute.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.0\refint\WFAttribute.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.0\WFAttribute.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.0\ref\WFAttribute.dll

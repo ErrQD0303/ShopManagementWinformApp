@@ -1,0 +1,12 @@
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\bin\Debug\net7.0\WFException.deps.json
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\bin\Debug\net7.0\WFException.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\bin\Debug\net7.0\WFException.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\WFException.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\WFException.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\WFException.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\WFException.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\WFException.sourcelink.json
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\WFException.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\refint\WFException.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\WFException.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\ref\WFException.dll
