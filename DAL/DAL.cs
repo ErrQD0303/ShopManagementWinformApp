@@ -7,6 +7,7 @@ using CONNECTIONS;
 using System.Text;
 using System.Threading.Tasks;
 using CONNECTIONS.Contracts;
+using Config;
 using MODEL.Contracts;
 using System.Data;
 using Autofac;
@@ -23,29 +24,13 @@ namespace DAL
         public DAL(ISQLConnection? connection) => _connection = connection ?? throw new ArgumentNullException();
         #endregion
         #region methods
-        public async Task<T> Get(Expression<Func<T, bool>>? filter = null)
+        public async Task<T?> Get(Expression<Func<T, bool>>? filter = null)
         {
             try
             {
-                if (_connection is null)
-                    throw new ArgumentNullException();
+                var result = await GetAll(filter);
 
-                StringBuilder query = new StringBuilder("SELECT * FROM " + typeof(T).Name.Substring(1));
-                if (filter != null)
-                {
-                    var lambda = filter.Compile();
-                    var whereClause = Expressio
-                    query.Append(" WHERE " + whereClause);
-                }
-                var resultRows = _connection.LoadData(query.ToString()).Tables[0].Rows.Cast<DataRow>().ToList();
-                T result = Config.Configuration.CB.Build().Resolve<T>();
-                var propertiesName = result.GetType().GetProperties().Select(x => x.Name).ToList();
-                foreach (var item in propertiesName)
-                {
-                    typeof(T).GetProperty(item)?.SetValue(result, resultRow[item]);
-                }
-
-                return result;
+                return result?.FirstOrDefault();
             }
             catch (Exception)
             {
@@ -59,10 +44,19 @@ namespace DAL
             {
                 if (_connection is null)
                     throw new ArgumentNullException();
+
+                StringBuilder query = new StringBuilder("SELECT * FROM " + typeof(T).Name.Substring(1));
+                object[]? parameterizedArray = null;
+                if (filter != null)
+                {
+                    var lambda = filter.Compile();
+                    (var whereClause, parameterizedArray) = filter.ToSqlWhereWithParameters();
+                    query.Append(" WHERE " + whereClause);
+                }
+                return _connection.LoadData(query.ToString(), parameterizedArray).Tables[0].Rows.Cast<DataRow>().Select(Config.Configuration.CreateObject<T>);
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

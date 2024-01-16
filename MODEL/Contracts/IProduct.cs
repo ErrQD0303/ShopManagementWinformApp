@@ -13,8 +13,10 @@ namespace MODEL.Contracts
         long ID { get; set; }
         string ProductID { get; set; }
         [Name]
-        string Name { get; set; }
+        string ProductName { get; set; }
         string Description { get; set; }
+        bool IsActived { get; set; }
+        bool IsDeleted { get; set; }
         #endregion
     }
 }

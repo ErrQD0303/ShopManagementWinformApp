@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Data;
+using System.Diagnostics;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -22,6 +23,7 @@ namespace Config
         #region Properties
         public static long ProductID { get => _productID; set => _productID = value; }
         public static ContainerBuilder CB { get;} = new();
+        public static IContainer? Container { get; set; }
         #endregion
 
         #region Methods
@@ -110,6 +112,22 @@ namespace Config
             {
                 throw;
             }
+        }
+
+        public static T CreateObject<T>(DataRow row)
+        {
+            var result = Container.Resolve<T>();
+            var properties = typeof(T).GetProperties();
+
+            foreach (var property in properties)
+            {
+                if (row.Table.Columns.Contains(property.Name))
+                {
+                    property.SetValue(result, row[property.Name]);
+                }
+            }
+
+            return result;
         }
         #endregion
     }

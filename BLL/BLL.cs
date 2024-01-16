@@ -27,7 +27,7 @@ namespace BLL
         public Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>>? filter = null) 
             => _dal!.GetAll(filter);
 
-        public Task<T> Get(Expression<Func<T, bool>>? filter = null)
+        public Task<T?> Get(Expression<Func<T, bool>>? filter = null)
             => _dal!.Get(filter);
 
         public abstract Task Add(T entity);

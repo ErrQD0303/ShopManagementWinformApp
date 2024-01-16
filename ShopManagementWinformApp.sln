@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CONNECTIONS", "CONNECTIONS\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartUpDI", "StartUpDI\StartUpDI.csproj", "{827DE0A4-9C01-4BCF-8D06-0C07CE3FFA95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFException", "Exception\WFException.csproj", "{E27231A3-8631-4EE4-A72B-3469308854D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WFException", "Exception\WFException.csproj", "{E27231A3-8631-4EE4-A72B-3469308854D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFAttribute", "WFAttribute\WFAttribute.csproj", "{BD06DDCE-9B2A-4B5A-9768-1DCBDC0A47B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WFAttribute", "WFAttribute\WFAttribute.csproj", "{BD06DDCE-9B2A-4B5A-9768-1DCBDC0A47B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IUnitOfWork", "IUnitOfWork\IUnitOfWork.csproj", "{E6B960B0-810A-42C4-B942-7820B52D3BB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{BD06DDCE-9B2A-4B5A-9768-1DCBDC0A47B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD06DDCE-9B2A-4B5A-9768-1DCBDC0A47B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD06DDCE-9B2A-4B5A-9768-1DCBDC0A47B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6B960B0-810A-42C4-B942-7820B52D3BB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6B960B0-810A-42C4-B942-7820B52D3BB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6B960B0-810A-42C4-B942-7820B52D3BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6B960B0-810A-42C4-B942-7820B52D3BB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

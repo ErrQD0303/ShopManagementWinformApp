@@ -12,7 +12,7 @@ namespace BLL
 {
     public static class StartUp
     {
-        public static ContainerBuilder AddDI(this ContainerBuilder cb)
+        public static ContainerBuilder AddBLDI(this ContainerBuilder cb)
         {
             cb.RegisterType<ProductBLL>().As<IProductBLL>();
             return cb;

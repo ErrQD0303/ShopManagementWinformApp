@@ -12,8 +12,10 @@
           "BLL": "1.0.0",
           "CONNECTIONS": "1.0.0",
           "Config": "1.0.0",
+          "IUnitOfWork": "1.0.0",
           "MODEL": "1.0.0",
-          "StartUpDI": "1.0.0"
+          "StartUpDI": "1.0.0",
+          "WFException": "1.0.0"
         },
         "runtime": {
           "ShopManagementWinformApp.dll": {}
@@ -994,6 +996,8 @@
       "DAL/1.0.0": {
         "dependencies": {
           "Autofactory": "6.0.0",
+          "CONNECTIONS": "1.0.0",
+          "Config": "1.0.0",
           "MODEL": "1.0.0",
           "MySql.Data": "8.2.0"
         },
@@ -1001,8 +1005,19 @@
           "DAL.dll": {}
         }
       },
+      "IUnitOfWork/1.0.0": {
+        "dependencies": {
+          "Autofactory": "6.0.0",
+          "BLL": "1.0.0",
+          "MODEL": "1.0.0"
+        },
+        "runtime": {
+          "IUnitOfWork.dll": {}
+        }
+      },
       "MODEL/1.0.0": {
         "dependencies": {
+          "Autofactory": "6.0.0",
           "WFAttribute": "1.0.0"
         },
         "runtime": {
@@ -1012,8 +1027,10 @@
       "StartUpDI/1.0.0": {
         "dependencies": {
           "Autofactory": "6.0.0",
+          "BLL": "1.0.0",
           "CONNECTIONS": "1.0.0",
-          "DAL": "1.0.0"
+          "DAL": "1.0.0",
+          "IUnitOfWork": "1.0.0"
         },
         "runtime": {
           "StartUpDI.dll": {}
@@ -1711,6 +1728,11 @@
       "sha512": ""
     },
     "DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "IUnitOfWork/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

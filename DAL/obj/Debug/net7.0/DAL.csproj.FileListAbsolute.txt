@@ -16,3 +16,9 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\obj\Debug\net7.0\ref\DA
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\obj\Debug\net7.0\DAL.sourcelink.json
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\bin\Debug\net7.0\WFAttribute.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\bin\Debug\net7.0\WFAttribute.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\bin\Debug\net7.0\Config.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\bin\Debug\net7.0\CONNECTIONS.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\bin\Debug\net7.0\WFException.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\bin\Debug\net7.0\Config.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\bin\Debug\net7.0\CONNECTIONS.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\bin\Debug\net7.0\WFException.pdb

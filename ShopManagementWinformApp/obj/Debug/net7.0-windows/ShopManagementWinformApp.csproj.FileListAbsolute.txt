@@ -60,3 +60,5 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bi
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\WFAttribute.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\WFException.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.sourcelink.json
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\IUnitOfWork.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\IUnitOfWork.pdb

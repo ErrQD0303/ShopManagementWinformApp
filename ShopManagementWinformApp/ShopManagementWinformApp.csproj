@@ -16,6 +16,8 @@
     <ProjectReference Include="..\BLL\BLL.csproj" />
     <ProjectReference Include="..\Configuration\Config.csproj" />
     <ProjectReference Include="..\CONNECTIONS\CONNECTIONS.csproj" />
+    <ProjectReference Include="..\Exception\WFException.csproj" />
+    <ProjectReference Include="..\IUnitOfWork\IUnitOfWork.csproj" />
     <ProjectReference Include="..\MODEL\MODEL.csproj" />
     <ProjectReference Include="..\StartUpDI\StartUpDI.csproj" />
   </ItemGroup>

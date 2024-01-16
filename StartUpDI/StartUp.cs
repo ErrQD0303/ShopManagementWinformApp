@@ -1,6 +1,9 @@
 ﻿using Autofac;
 using CONNECTIONS;
 using BLL;
+using DAL;
+using IUnitOfWork;
+using MODEL;
 
 namespace StartUpDI
 {
@@ -8,8 +11,11 @@ namespace StartUpDI
     {
         protected override void Load(ContainerBuilder cb)
         {
-            cb.AddConnectionStringDI();
-            cb.AddDI();
+            cb.AddConnectionStringDI()
+                .AddBLDI()
+                .AddDALDI()
+                .AddUOWDI()
+                .AddModelDI();
         }
     }
 }

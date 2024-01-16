@@ -22,3 +22,5 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\WFExce
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\Config.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\WFAttribute.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\WFException.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\CONNECTIONS.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\bin\Debug\net7.0\CONNECTIONS.pdb

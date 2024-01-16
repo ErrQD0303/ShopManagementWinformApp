@@ -12,7 +12,7 @@ namespace DAL.Contracts
         where T : class
     {
         Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>>? filter = null);
-        Task<T> Get(Expression<Func<T, bool>>? filter = null);
+        Task<T?> Get(Expression<Func<T, bool>>? filter = null);
         Task Add(T entity);
         Task Update(T entity);
         Task Remove(int id);

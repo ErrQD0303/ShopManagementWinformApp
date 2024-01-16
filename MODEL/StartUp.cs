@@ -10,7 +10,7 @@ namespace MODEL
 {
     public static class StartUp
     {
-        public static ContainerBuilder AddDI(this ContainerBuilder cb)
+        public static ContainerBuilder AddModelDI(this ContainerBuilder cb)
         {
             cb.RegisterType<Product>().As<IProduct>();
             return cb;

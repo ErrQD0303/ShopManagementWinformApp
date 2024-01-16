@@ -1832,6 +1832,21 @@
           "bin/placeholder/DAL.dll": {}
         }
       },
+      "IUnitOfWork/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "AutoFactory": "6.0.0",
+          "BLL": "1.0.0",
+          "MODEL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/IUnitOfWork.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IUnitOfWork.dll": {}
+        }
+      },
       "MODEL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -6031,6 +6046,11 @@
       "path": "../DAL/DAL.csproj",
       "msbuildProject": "../DAL/DAL.csproj"
     },
+    "IUnitOfWork/1.0.0": {
+      "type": "project",
+      "path": "../IUnitOfWork/IUnitOfWork.csproj",
+      "msbuildProject": "../IUnitOfWork/IUnitOfWork.csproj"
+    },
     "MODEL/1.0.0": {
       "type": "project",
       "path": "../MODEL/MODEL.csproj",
@@ -6052,7 +6072,8 @@
       "AutoFactory >= 6.0.0",
       "BLL >= 1.0.0",
       "CONNECTIONS >= 1.0.0",
-      "DAL >= 1.0.0"
+      "DAL >= 1.0.0",
+      "IUnitOfWork >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6096,6 +6117,9 @@
             },
             "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\DAL\\DAL.csproj": {
               "projectPath": "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\DAL\\DAL.csproj"
+            },
+            "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\IUnitOfWork\\IUnitOfWork.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\source\\repos\\ShopManagementWinformApp\\IUnitOfWork\\IUnitOfWork.csproj"
             }
           }
         }

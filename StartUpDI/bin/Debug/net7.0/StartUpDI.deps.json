@@ -9,8 +9,10 @@
       "StartUpDI/1.0.0": {
         "dependencies": {
           "Autofactory": "6.0.0",
+          "BLL": "1.0.0",
           "CONNECTIONS": "1.0.0",
-          "DAL": "1.0.0"
+          "DAL": "1.0.0",
+          "IUnitOfWork": "1.0.0"
         },
         "runtime": {
           "StartUpDI.dll": {}
@@ -1032,6 +1034,26 @@
           }
         }
       },
+      "BLL/1.0.0": {
+        "dependencies": {
+          "Config": "1.0.0",
+          "DAL": "1.0.0",
+          "MODEL": "1.0.0"
+        },
+        "runtime": {
+          "BLL.dll": {}
+        }
+      },
+      "Config/1.0.0": {
+        "dependencies": {
+          "MODEL": "1.0.0",
+          "WFAttribute": "1.0.0",
+          "WFException": "1.0.0"
+        },
+        "runtime": {
+          "Config.dll": {}
+        }
+      },
       "CONNECTIONS/1.0.0": {
         "dependencies": {
           "Autofactory": "6.0.0",
@@ -1046,6 +1068,8 @@
       "DAL/1.0.0": {
         "dependencies": {
           "Autofactory": "6.0.0",
+          "CONNECTIONS": "1.0.0",
+          "Config": "1.0.0",
           "MODEL": "1.0.0",
           "MySql.Data": "8.2.0"
         },
@@ -1053,8 +1077,19 @@
           "DAL.dll": {}
         }
       },
+      "IUnitOfWork/1.0.0": {
+        "dependencies": {
+          "Autofactory": "6.0.0",
+          "BLL": "1.0.0",
+          "MODEL": "1.0.0"
+        },
+        "runtime": {
+          "IUnitOfWork.dll": {}
+        }
+      },
       "MODEL/1.0.0": {
         "dependencies": {
+          "Autofactory": "6.0.0",
           "WFAttribute": "1.0.0"
         },
         "runtime": {
@@ -1064,6 +1099,11 @@
       "WFAttribute/1.0.0": {
         "runtime": {
           "WFAttribute.dll": {}
+        }
+      },
+      "WFException/1.0.0": {
+        "runtime": {
+          "WFException.dll": {}
         }
       }
     }
@@ -1732,6 +1772,16 @@
       "path": "zstdsharp.port/0.7.1",
       "hashPath": "zstdsharp.port.0.7.1.nupkg.sha512"
     },
+    "BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Config/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "CONNECTIONS/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -1742,12 +1792,22 @@
       "serviceable": false,
       "sha512": ""
     },
+    "IUnitOfWork/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "MODEL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "WFAttribute/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WFException/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

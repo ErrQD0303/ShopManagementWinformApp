@@ -67,7 +67,7 @@ namespace CONNECTIONS
             }
         }
 
-        public void Execute(string query, Dictionary<string, string> parameters)
+        public async Task Execute(string query, object[]? parameters)
         {
             try
             {
@@ -87,7 +87,7 @@ namespace CONNECTIONS
             }
         }
 
-        public DataSet LoadData(string query, Dictionary<string, string> parameters)
+        public DataSet LoadData(string query, object[]? parameters)
         {
             try
             {
@@ -112,7 +112,7 @@ namespace CONNECTIONS
             }
         }
 
-        public DataSet ExecuteSP(string spName, Dictionary<string, string> parameters)
+        public DataSet ExecuteSP(string spName, object[]? parameters)
         {
             try
             {
@@ -139,11 +139,14 @@ namespace CONNECTIONS
             }
         }
 
-        private static void ReplaceKeyValue(Dictionary<string, string> parameters, MySqlCommand cmd)
+        private static void ReplaceKeyValue(object[]? parameters, MySqlCommand cmd)
         {
-            foreach (var p in parameters)
+            if (parameters is not null)
             {
-                cmd.Parameters.AddWithValue("@" + p.Key, p.Value);
+                for (int i = 0; i < parameters.Length; ++i)
+                {
+                    cmd.Parameters.AddWithValue($"@p{i}", parameters[i]);
+                }
             }
         }
     }
