@@ -147,6 +147,18 @@ namespace Config
                 return null;
             }
         }
+
+        public static string? GetCallerMethodName(object? o)
+        {
+            var currentObject = o as Exception;
+            if (currentObject != null)
+            {
+                var caller = new StackTrace(currentObject, true).GetFrame(1)!.GetMethod();
+
+                return caller?.Name;
+            }
+            return null;
+        }
         #endregion
     }
 }

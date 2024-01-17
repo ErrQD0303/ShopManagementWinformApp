@@ -22,10 +22,10 @@ namespace ShopManagementWinformApp
             _cbInstance = Config.Configuration.CB.Build();
             Config.Configuration.Container = _cbInstance;
             _unitOfWork = _cbInstance.Resolve<IUnitOfWork.Contracts.IUnitOfWork>();
-            Config.Configuration.ProductID = _unitOfWork.ProductBLL?.GetAll()?.Result?.Count() ?? 0;
+            Config.Configuration.ProductID = (_unitOfWork.ProductBLL?.GetAll()?.Result?.Select(x => Convert.ToInt64(x.ProductID.Substring(1))).Max() + 1) ?? 1;
             //var product = instance.Resolve<ISQLConnection>().LoadData("SELECT * FROM Product WHERE ProductId = @Product;", new Dictionary<string, string>() { { "@Product", "P001" } });
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());;
+            Application.Run(new AppMainForm());;
         }
     }
 }

@@ -1,0 +1,21 @@
+********** 18/01/2024 12:43:19 SA **********
+Exception Type: MySql.Data.MySqlClient.MySqlException
+Exception: Column 'IsActived' specified twice
+Source: MySql.Data
+Stack Trace: 
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacketAsync(Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.GetResultAsync(Int32 affectedRow, Int64 insertedId, Boolean execAsync)
+   at MySql.Data.MySqlClient.Driver.GetResultAsync(Int32 statementId, Int32 affectedRows, Int64 insertedId, Boolean execAsync)
+   at MySql.Data.MySqlClient.Driver.NextResultAsync(Int32 statementId, Boolean force, Boolean execAsync)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteScalarAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   at CONNECTIONS.MySQLConnection.Execute(String query, Object[] parameters) in C:\Users\ADMIN\source\repos\ShopManagementWinformApp\CONNECTIONS\MySQLConnection.cs:line 79
+   at DAL.ProductDAL.Execute(IProduct entity, String queryStr) in C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\ProductDAL.cs:line 47
+   at DAL.ProductDAL.Add(IProduct entity) in C:\Users\ADMIN\source\repos\ShopManagementWinformApp\DAL\ProductDAL.cs:line 21
+   at BLL.ProductBLL.Add(IProduct entity) in C:\Users\ADMIN\source\repos\ShopManagementWinformApp\BLL\ProductBLL.cs:line 27
+

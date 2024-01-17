@@ -41,7 +41,6 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bi
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\DAL.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\MODEL.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.csproj.AssemblyReference.cache
-C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.Form1.resources
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.csproj.GenerateResource.cache
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.AssemblyInfoInputs.cache
@@ -62,3 +61,5 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bi
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.sourcelink.json
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\IUnitOfWork.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\IUnitOfWork.pdb
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.AddForm.resources
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.AppMainForm.resources

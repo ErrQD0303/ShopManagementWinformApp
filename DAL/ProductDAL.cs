@@ -32,7 +32,7 @@ namespace DAL
             var count = 0;
             for (var i = 0; i < properties.Length; i++)
             {
-                if (properties[i].Name == nameof(IProduct.ID))
+                if (properties[i].Name == nameof(IProduct.ID) || properties[i].Name == nameof(IProduct.IsActived) || properties[i].Name == nameof(IProduct.IsDeleted))
                     continue;
                 propertiesString += properties[i].Name + ", ";
                 valueString += $"@p{count}, ";
