@@ -56,15 +56,33 @@ namespace Config
                     throw new NotSupportedException($"Expression type {expression.NodeType} not supported");
             }
         }
-        public static string GenerateLeftAndRightClause(this Expression expression, string? op, List<object?> parameters)
+        private static string GenerateLeftAndRightClause(this Expression expression, string? op, List<object?> parameters)
         {
             if (op is null)
                 throw new ArgumentNullException(nameof(op));
 
             var binaryEqualExpression = (BinaryExpression)expression;
             var left = Visit(binaryEqualExpression.Left, parameters);
-            var right = Visit(binaryEqualExpression.Right, parameters);
+            var right = GetMemberAccessValue(binaryEqualExpression.Right, parameters);
             return $"{left} {op} {right}";
+        }
+
+        private static string GetMemberAccessValue(Expression expression, List<object?> parameters)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+
+            if (expression.NodeType == ExpressionType.MemberAccess)
+            {
+                var memberExpression = (MemberExpression)expression;
+
+                var memberValue = Expression.Lambda(memberExpression).Compile().DynamicInvoke();
+              
+                parameters.Add(memberValue);
+                return $"@p{parameters.Count - 1}";
+            }
+
+            return Visit(expression, parameters);
         }
     }
 }

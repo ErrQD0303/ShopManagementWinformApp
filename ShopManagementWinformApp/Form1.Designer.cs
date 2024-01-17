@@ -34,6 +34,12 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            bindingSource1 = new BindingSource(components);
+            mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
+            panel1 = new Panel();
+            button1 = new Button();
+            label1 = new Label();
+            panel2 = new Panel();
             ProductDataGridView = new DataGridView();
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             productIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -41,13 +47,54 @@
             descriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             updateBtn = new DataGridViewButtonColumn();
             deleteBtn = new DataGridViewButtonColumn();
-            bindingSource1 = new BindingSource(components);
-            grb1 = new GroupBox();
-            mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
-            ((System.ComponentModel.ISupportInitialize)ProductDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
-            grb1.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ProductDataGridView).BeginInit();
             SuspendLayout();
+            // 
+            // bindingSource1
+            // 
+            bindingSource1.DataSource = typeof(MODEL.Product);
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1007, 104);
+            panel1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Emoji", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(897, 27);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 33);
+            button1.TabIndex = 1;
+            button1.Text = "Insert";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(243, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(520, 54);
+            label1.TabIndex = 0;
+            label1.Text = "SHOP MANAGEMENT APP";
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(ProductDataGridView);
+            panel2.Location = new Point(0, 104);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1007, 589);
+            panel2.TabIndex = 3;
             // 
             // ProductDataGridView
             // 
@@ -56,7 +103,7 @@
             ProductDataGridView.AllowUserToResizeColumns = false;
             ProductDataGridView.AllowUserToResizeRows = false;
             ProductDataGridView.AutoGenerateColumns = false;
-            ProductDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            ProductDataGridView.BackgroundColor = SystemColors.Control;
             ProductDataGridView.BorderStyle = BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -73,7 +120,7 @@
             ProductDataGridView.DataSource = bindingSource1;
             ProductDataGridView.Dock = DockStyle.Fill;
             ProductDataGridView.GridColor = SystemColors.ControlDark;
-            ProductDataGridView.Location = new Point(3, 26);
+            ProductDataGridView.Location = new Point(0, 0);
             ProductDataGridView.Name = "ProductDataGridView";
             ProductDataGridView.ReadOnly = true;
             ProductDataGridView.RowHeadersVisible = false;
@@ -82,10 +129,10 @@
             dataGridViewCellStyle5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             ProductDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             ProductDataGridView.RowTemplate.Height = 35;
-            ProductDataGridView.ScrollBars = ScrollBars.Vertical;
+            ProductDataGridView.ScrollBars = ScrollBars.None;
             ProductDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ProductDataGridView.Size = new Size(976, 596);
-            ProductDataGridView.TabIndex = 0;
+            ProductDataGridView.Size = new Size(1007, 589);
+            ProductDataGridView.TabIndex = 2;
             ProductDataGridView.CellContentClick += ProductDataGridView_CellContentClick;
             // 
             // iDDataGridViewTextBoxColumn
@@ -164,48 +211,40 @@
             deleteBtn.Text = "➖DELETE";
             deleteBtn.UseColumnTextForButtonValue = true;
             // 
-            // bindingSource1
-            // 
-            bindingSource1.DataSource = typeof(MODEL.Product);
-            // 
-            // grb1
-            // 
-            grb1.Controls.Add(ProductDataGridView);
-            grb1.Location = new Point(12, 84);
-            grb1.Name = "grb1";
-            grb1.Size = new Size(982, 625);
-            grb1.TabIndex = 1;
-            grb1.TabStop = false;
-            // 
             // Form1
             // 
             AccessibleRole = AccessibleRole.ScrollBar;
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1006, 721);
-            Controls.Add(grb1);
+            ClientSize = new Size(1006, 693);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Shop Management";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)ProductDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
-            grb1.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)ProductDataGridView).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private DataGridView ProductDataGridView;
         private BindingSource bindingSource1;
-        private GroupBox grb1;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
+        private Panel panel1;
+        private Button button1;
+        private Label label1;
+        private Panel panel2;
+        private DataGridView ProductDataGridView;
         private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn ProductName;
         private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private DataGridViewButtonColumn updateBtn;
         private DataGridViewButtonColumn deleteBtn;
-        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
     }
 }

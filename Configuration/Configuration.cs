@@ -129,6 +129,24 @@ namespace Config
 
             return result;
         }
+
+        public static object? GetDefaultValue(Type type)
+        {
+            if (type is null)
+                throw new ArgumentNullException(nameof(type));
+            if (type.IsValueType)
+            {
+                return Activator.CreateInstance(type);
+            }
+            else if(type == typeof(string))
+            {
+                return string.Empty;
+            }
+            else
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }
