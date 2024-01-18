@@ -41,12 +41,8 @@ namespace ShopManagementWinformApp
                 product!.Description = richtxbInputProductDescription.Text;
                 Program._unitOfWork?.ProductBLL.Update(product);
             }
+            this.DialogResult = DialogResult.OK;
             this.Close();
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void AddForm_Load(object sender, EventArgs e)

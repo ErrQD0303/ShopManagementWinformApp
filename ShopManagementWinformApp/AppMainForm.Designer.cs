@@ -29,20 +29,19 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             bindingSource1 = new BindingSource(components);
             mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
             panel1 = new Panel();
             txbPage = new TextBox();
             hPageScrollBar = new HScrollBar();
             label2 = new Label();
-            btnInsert = new Button();
             label1 = new Label();
+            btnInsert = new Button();
             panel2 = new Panel();
             ProductDataGridView = new DataGridView();
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -67,11 +66,10 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(23, 68, 109);
+            panel1.BackColor = Color.FromArgb(12, 166, 120);
             panel1.Controls.Add(txbPage);
             panel1.Controls.Add(hPageScrollBar);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(btnInsert);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -81,7 +79,7 @@
             // txbPage
             // 
             txbPage.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txbPage.ForeColor = Color.FromArgb(77, 77, 77);
+            txbPage.ForeColor = Color.FromArgb(24, 73, 44);
             txbPage.Location = new Point(999, 64);
             txbPage.Margin = new Padding(0);
             txbPage.Name = "txbPage";
@@ -103,40 +101,42 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(235, 235, 235);
+            label2.ForeColor = Color.FromArgb(230, 252, 245);
             label2.Location = new Point(907, 64);
             label2.Name = "label2";
             label2.Size = new Size(69, 31);
             label2.TabIndex = 2;
             label2.Text = "Page:";
             // 
-            // btnInsert
-            // 
-            btnInsert.FlatAppearance.BorderSize = 2;
-            btnInsert.FlatStyle = FlatStyle.Flat;
-            btnInsert.Font = new Font("Segoe UI Emoji", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btnInsert.ForeColor = Color.FromArgb(235, 235, 235);
-            btnInsert.Location = new Point(1154, 64);
-            btnInsert.Name = "btnInsert";
-            btnInsert.Size = new Size(94, 33);
-            btnInsert.TabIndex = 1;
-            btnInsert.Text = "INSERT";
-            btnInsert.UseVisualStyleBackColor = true;
-            btnInsert.Click += this.BtnInsert_Click;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(235, 235, 235);
+            label1.ForeColor = Color.FromArgb(230, 252, 245);
             label1.Location = new Point(53, 17);
             label1.Name = "label1";
             label1.Size = new Size(520, 54);
             label1.TabIndex = 0;
             label1.Text = "SHOP MANAGEMENT APP";
             // 
+            // btnInsert
+            // 
+            btnInsert.BackColor = Color.FromArgb(12, 166, 120);
+            btnInsert.FlatAppearance.BorderSize = 2;
+            btnInsert.FlatStyle = FlatStyle.Flat;
+            btnInsert.Font = new Font("Segoe UI Emoji", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnInsert.ForeColor = Color.FromArgb(230, 252, 245);
+            btnInsert.Location = new Point(0, 35);
+            btnInsert.Name = "btnInsert";
+            btnInsert.Size = new Size(157, 35);
+            btnInsert.TabIndex = 1;
+            btnInsert.Text = "➕";
+            btnInsert.UseVisualStyleBackColor = false;
+            btnInsert.Click += BtnInsert_Click;
+            // 
             // panel2
             // 
+            panel2.Controls.Add(btnInsert);
             panel2.Controls.Add(ProductDataGridView);
             panel2.Location = new Point(243, 101);
             panel2.Name = "panel2";
@@ -152,38 +152,44 @@
             ProductDataGridView.AutoGenerateColumns = false;
             ProductDataGridView.BackgroundColor = SystemColors.Control;
             ProductDataGridView.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(77, 77, 77);
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            ProductDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(24, 73, 44);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(24, 73, 44);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            ProductDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             ProductDataGridView.ColumnHeadersHeight = 35;
             ProductDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             ProductDataGridView.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, productIDDataGridViewTextBoxColumn, ProductName, descriptionDataGridViewTextBoxColumn, updateBtn, deleteBtn });
             ProductDataGridView.Cursor = Cursors.Hand;
             ProductDataGridView.DataSource = bindingSource1;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = Color.FromArgb(77, 77, 77);
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            ProductDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(24, 73, 44);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(8, 127, 91);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(230, 252, 245);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            ProductDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             ProductDataGridView.Dock = DockStyle.Fill;
+            ProductDataGridView.EnableHeadersVisualStyles = false;
             ProductDataGridView.GridColor = SystemColors.ControlDark;
             ProductDataGridView.Location = new Point(0, 0);
             ProductDataGridView.Margin = new Padding(0);
             ProductDataGridView.Name = "ProductDataGridView";
             ProductDataGridView.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(24, 73, 44);
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(24, 73, 44);
+            ProductDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             ProductDataGridView.RowHeadersVisible = false;
             ProductDataGridView.RowHeadersWidth = 51;
             ProductDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            ProductDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
             ProductDataGridView.RowTemplate.Height = 35;
             ProductDataGridView.ScrollBars = ScrollBars.None;
             ProductDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -194,8 +200,6 @@
             // iDDataGridViewTextBoxColumn
             // 
             iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            iDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             iDDataGridViewTextBoxColumn.HeaderText = "ID";
             iDDataGridViewTextBoxColumn.MinimumWidth = 6;
             iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
@@ -236,35 +240,35 @@
             // updateBtn
             // 
             updateBtn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(0, 77, 0);
-            dataGridViewCellStyle9.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            updateBtn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(8, 127, 91);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(230, 252, 245);
+            updateBtn.DefaultCellStyle = dataGridViewCellStyle2;
             updateBtn.FlatStyle = FlatStyle.Flat;
             updateBtn.HeaderText = "";
             updateBtn.MinimumWidth = 6;
             updateBtn.Name = "updateBtn";
             updateBtn.ReadOnly = true;
             updateBtn.Resizable = DataGridViewTriState.False;
-            updateBtn.Text = "➕UPDATE";
+            updateBtn.Text = "🔃UPDATE";
             updateBtn.UseColumnTextForButtonValue = true;
             // 
             // deleteBtn
             // 
             deleteBtn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(138, 0, 0);
-            dataGridViewCellStyle10.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = Color.White;
-            deleteBtn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(224, 49, 49);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 245, 245);
+            deleteBtn.DefaultCellStyle = dataGridViewCellStyle3;
             deleteBtn.FlatStyle = FlatStyle.Flat;
             deleteBtn.HeaderText = "";
             deleteBtn.MinimumWidth = 6;
             deleteBtn.Name = "deleteBtn";
             deleteBtn.ReadOnly = true;
             deleteBtn.Resizable = DataGridViewTriState.False;
-            deleteBtn.Text = "➖DELETE";
+            deleteBtn.Text = "🗑DELETE";
             deleteBtn.UseColumnTextForButtonValue = true;
             // 
             // tableLayoutPanelSelect
@@ -287,7 +291,7 @@
             btnTest.BackColor = Color.White;
             btnTest.Dock = DockStyle.Fill;
             btnTest.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTest.ForeColor = Color.FromArgb(77, 77, 77);
+            btnTest.ForeColor = Color.FromArgb(24, 73, 44);
             btnTest.Location = new Point(0, 35);
             btnTest.Margin = new Padding(0);
             btnTest.Name = "btnTest";
@@ -302,7 +306,7 @@
             btnProduct.BackColor = Color.White;
             btnProduct.Dock = DockStyle.Fill;
             btnProduct.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btnProduct.ForeColor = Color.FromArgb(77, 77, 77);
+            btnProduct.ForeColor = Color.FromArgb(24, 73, 44);
             btnProduct.Location = new Point(0, 0);
             btnProduct.Margin = new Padding(0);
             btnProduct.Name = "btnProduct";

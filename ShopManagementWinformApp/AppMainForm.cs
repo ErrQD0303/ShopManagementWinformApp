@@ -1,4 +1,5 @@
-using Autofac;
+﻿using Autofac;
+using MODEL;
 using MODEL.Contracts;
 using Org.BouncyCastle.Asn1.X509.Qualified;
 using System.Diagnostics;
@@ -52,6 +53,9 @@ namespace ShopManagementWinformApp
                     bindingSource1.Add(product);
                 }
             }
+
+            btnInsert.Location = new System.Drawing.Point(0, 35 * (filteredProducts!.Count() + 1));
+
             ProductDataGridView.ClearSelection();
         }
 
@@ -70,6 +74,8 @@ namespace ShopManagementWinformApp
                     {
                         var databaseProduct = Program._unitOfWork?.ProductBLL?.Get(x => x.ProductID == product.ProductID).Result;
                         Program._unitOfWork?.ProductBLL?.Remove((int)databaseProduct!.ID);
+                        if (_products!.Count() % 15 == 1 && _page > 0)
+                            ChangePageValue(_page - 1);
                         LoadProductTable(refillProduct: true);
                     }
                 }
@@ -80,19 +86,16 @@ namespace ShopManagementWinformApp
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void TablePanelButton_Click(object sender, EventArgs e)
         {
             if (sender is System.Windows.Forms.Button clickedButton)
             {
-                clickedButton.BackColor = ColorTranslator.FromHtml("#A5DDEE");
+                clickedButton.BackColor = ColorTranslator.FromHtml("#099268");
+                clickedButton.ForeColor = ColorTranslator.FromHtml("#e6fcf5");
                 foreach (var btn in tableLayoutPanelSelect.Controls.OfType<System.Windows.Forms.Button>().Where(x => x.Name != clickedButton.Name))
                 {
                     btn.BackColor = ColorTranslator.FromHtml("#FFFFFF");
+                    btn.ForeColor = ColorTranslator.FromHtml("#18492C");
                 }
                 if (clickedButton.Name == "btnProduct")
                     LoadProductTable(refillProduct: true);
@@ -120,9 +123,35 @@ namespace ShopManagementWinformApp
 
         private void LoadAddForm(IProduct? product = null)
         {
-            AddForm addForm = new(product);
-            addForm.ShowDialog();
-            LoadProductTable(refillProduct: true);
+            bool refillProduct = false;
+            using AddForm addForm = new(product);
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                ChangePageValue(_products!.Count() / 15);
+                refillProduct = true;
+            }
+
+            LoadProductTable(refillProduct: refillProduct);
+        }
+
+        private void ChangePageValue(long value)
+        {
+            _page = value;
+            hPageScrollBar.Value = (int)_page;
+            txbPage.Text = (hPageScrollBar.Value + 1).ToString();
+        }
+    }
+
+    internal record struct NewStruct(int Item1, int Item2)
+    {
+        public static implicit operator (int, int)(NewStruct value)
+        {
+            return (value.Item1, value.Item2);
+        }
+
+        public static implicit operator NewStruct((int, int) value)
+        {
+            return new NewStruct(value.Item1, value.Item2);
         }
     }
 }

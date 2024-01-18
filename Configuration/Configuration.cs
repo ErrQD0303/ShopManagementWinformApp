@@ -159,6 +159,13 @@ namespace Config
             }
             return null;
         }
+
+        public static bool IsReferenceType(Type type)
+        {
+            if (type is null)
+                throw new ArgumentNullException(nameof(type));
+            return !type.IsValueType || (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>));
+        }
         #endregion
     }
 }

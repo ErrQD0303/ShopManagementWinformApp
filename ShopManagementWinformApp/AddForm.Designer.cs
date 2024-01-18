@@ -52,7 +52,6 @@
             splitContainer1.Panel2.Controls.Add(lblInputProductName);
             splitContainer1.Panel2.Controls.Add(txbInputProductName);
             splitContainer1.Panel2.Controls.Add(btnAddUpdate);
-            splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(1361, 551);
             splitContainer1.SplitterDistance = 160;
             splitContainer1.TabIndex = 0;
