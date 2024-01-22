@@ -17,6 +17,8 @@ namespace MODEL.Contracts
         string Description { get; set; }
         bool IsActived { get; set; }
         bool IsDeleted { get; set; }
+        long DisplayID { get; set; }
+        int Version { get; set; }
         #endregion
     }
 }

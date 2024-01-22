@@ -12,6 +12,8 @@ namespace MODEL
         private string? _description;
         private bool _isActived;
         private bool _isDeleted;
+        private long _displayID;
+        private int _version;
         #endregion
 
         #region properties
@@ -21,6 +23,8 @@ namespace MODEL
         public string Description { get => _description ?? throw new ArgumentNullException(); set => _description = value; }
         public bool IsActived { get => _isActived; set => _isActived = value; }
         public bool IsDeleted { get => _isDeleted; set => _isDeleted = value; }
+        public long DisplayID { get => _displayID; set => _displayID = value; }
+        public int Version { get => _version; set => _version = value; }
         #endregion
 
         #region constructors
@@ -37,7 +41,9 @@ namespace MODEL
                 ProductName = this.ProductName,
                 Description = this.Description, 
                 IsActived = this.IsActived,
-                IsDeleted = this.IsDeleted
+                IsDeleted = this.IsDeleted, 
+                DisplayID = this.DisplayID,
+                Version = this.Version
             };
         }
         #endregion

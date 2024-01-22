@@ -1,4 +1,10 @@
 ﻿using Autofac;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.SignalR;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using MODEL;
 using MODEL.Contracts;
 using Org.BouncyCastle.Asn1.X509.Qualified;
@@ -16,17 +22,25 @@ namespace ShopManagementWinformApp
 
         private IEnumerable<IProduct>? _products;
         private long _page = 0;
+        private ISignalRServer? _signalRServer;
         public AppMainForm()
         {
             /*Random Comment*/
             InitializeComponent();
             ChangedPageValue += ChangePageValue;
+            _signalRServer = Program.CBInstance.Resolve<ISignalRServer>();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             try
             {
+                CreateWebHostBuilder().Build().RunAsync();
+                _signalRServer?.Start();
+                _signalRServer!.AddMessage += (user, message) =>
+                {
+                    LoadProductTable(refillProduct: true);
+                };
                 LoadProductTable(refillProduct: true);
                 hPageScrollBar.Value = (int)_page;
                 txbPage.Text = (_page + 1).ToString();
@@ -36,6 +50,10 @@ namespace ShopManagementWinformApp
                 Debug.WriteLine(ex);
             }
         }
+
+        private static IWebHostBuilder CreateWebHostBuilder() =>
+            WebHost.CreateDefaultBuilder()
+                .UseStartup<SU>();
 
         private void LoadProductTable(bool refillProduct = false)
         {
@@ -50,7 +68,7 @@ namespace ShopManagementWinformApp
             {
                 for (var i = 0; i < filteredProducts.Count(); i++)
                 {
-                    IProduct? product = Program._cbInstance?.Resolve<IProduct>();
+                    IProduct? product = Program.CBInstance?.Resolve<IProduct>();
                     foreach (var p in properties)
                     {
                         p.SetValue(product, p.GetValue(filteredProducts.ElementAt((int)i)));
@@ -89,6 +107,7 @@ namespace ShopManagementWinformApp
                 {
                     UpdateButton_Click(sender, e);
                 }
+                _signalRServer!.Send("user", "message");
             }
         }
 
@@ -152,6 +171,7 @@ namespace ShopManagementWinformApp
                 {
                     throw new DBConcurrencyException();
                 }
+                _signalRServer!.Send("user", "insert");
             }
             finally
             {
@@ -174,6 +194,37 @@ namespace ShopManagementWinformApp
         public void ChangedPageValueInvoke()
         {
             ChangedPageValue?.Invoke(null);
+        }
+    }
+    public class SU
+    {
+        public SU(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get;}
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddSignalR();
+        }
+
+        public void Configure(IApplicationBuilder app)
+        {
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapHub<AppHub>("/appHub");
+            });
+        }
+    }
+    public class AppHub : Hub
+    {
+        public async Task SendMessage(string user, string message)
+        {
+            await Clients.All.SendAsync("SendMessage", user, message);
         }
     }
 }

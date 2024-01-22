@@ -29,7 +29,7 @@ namespace ShopManagementWinformApp
         {
             if (_product is null)
             {
-                var product = Program._cbInstance?.Resolve<IProduct>();
+                var product = Program.CBInstance?.Resolve<IProduct>();
                 product!.ProductName = txbInputProductName.Text;
                 product!.Description = richtxbInputProductDescription.Text;
                 Program._unitOfWork?.ProductBLL.Add(product);
