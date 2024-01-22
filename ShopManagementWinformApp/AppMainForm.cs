@@ -18,6 +18,7 @@ namespace ShopManagementWinformApp
         private long _page = 0;
         public AppMainForm()
         {
+            /*Random Comment*/
             InitializeComponent();
             ChangedPageValue += ChangePageValue;
         }
