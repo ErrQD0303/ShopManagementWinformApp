@@ -2,6 +2,7 @@
 using MODEL;
 using MODEL.Contracts;
 using Org.BouncyCastle.Asn1.X509.Qualified;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using ZstdSharp.Unsafe;
@@ -11,11 +12,14 @@ namespace ShopManagementWinformApp
 {
     public partial class AppMainForm : Form
     {
+        public event Action<long?> ChangedPageValue;
+
         private IEnumerable<IProduct>? _products;
         private long _page = 0;
         public AppMainForm()
         {
             InitializeComponent();
+            ChangedPageValue += ChangePageValue;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,7 +38,8 @@ namespace ShopManagementWinformApp
 
         private void LoadProductTable(bool refillProduct = false)
         {
-            ProductDataGridView.Rows.Clear();
+            if (ProductDataGridView.Rows.Count > 0)
+                ProductDataGridView.Rows.Clear();
             var products = Program._unitOfWork?.ProductBLL?.GetAll().Result;
             if (refillProduct)
                 _products = products?.Where(x => x.IsDeleted == false && x.IsActived == true);
@@ -49,7 +54,7 @@ namespace ShopManagementWinformApp
                     {
                         p.SetValue(product, p.GetValue(filteredProducts.ElementAt((int)i)));
                     }
-                    properties.FirstOrDefault(x => x.Name == "ID")?.SetValue(product, 15 * _page + i + 1);
+                    properties.FirstOrDefault(x => x.Name == "DisplayID")?.SetValue(product, 15 * _page + i + 1);
                     bindingSource1.Add(product);
                 }
             }
@@ -81,8 +86,23 @@ namespace ShopManagementWinformApp
                 }
                 else if (senderGrid.Columns[e.ColumnIndex].Name.Equals("updateBtn"))
                 {
-                    LoadAddForm(product);
+                    UpdateButton_Click(sender, e);
                 }
+            }
+        }
+
+        private void UpdateButton_Click(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var senderGrid = sender as DataGridView;
+                var product = (IProduct)senderGrid!.Rows[e.RowIndex].DataBoundItem;
+                LoadAddForm(product);
+            }
+            catch (DBConcurrencyException)
+            {
+                MessageBox.Show("This product has been updated by another user. Please reload the page.", "Update Product", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UpdateButton_Click(sender, e);
             }
         }
 
@@ -123,35 +143,36 @@ namespace ShopManagementWinformApp
 
         private void LoadAddForm(IProduct? product = null)
         {
-            bool refillProduct = false;
-            using AddForm addForm = new(product);
-            if (addForm.ShowDialog() == DialogResult.OK)
+            try
             {
-                ChangePageValue(_products!.Count() / 15);
-                refillProduct = true;
+                using AddForm addForm = new(product);
+                addForm.ShowDialog(this);
+                if (addForm.DialogResult == DialogResult.Abort)
+                {
+                    throw new DBConcurrencyException();
+                }
             }
-
-            LoadProductTable(refillProduct: refillProduct);
+            finally
+            {
+                LoadProductTable(refillProduct: true);
+            }
         }
 
-        private void ChangePageValue(long value)
+        private void ChangePageValue(long? value)
         {
-            _page = value;
+            if (value == null)
+            {
+                _page = _products!.Count() / 15;
+            }
+            else
+                _page = value.Value;
             hPageScrollBar.Value = (int)_page;
             txbPage.Text = (hPageScrollBar.Value + 1).ToString();
         }
-    }
 
-    internal record struct NewStruct(int Item1, int Item2)
-    {
-        public static implicit operator (int, int)(NewStruct value)
+        public void ChangedPageValueInvoke()
         {
-            return (value.Item1, value.Item2);
-        }
-
-        public static implicit operator NewStruct((int, int) value)
-        {
-            return new NewStruct(value.Item1, value.Item2);
+            ChangedPageValue?.Invoke(null);
         }
     }
 }
