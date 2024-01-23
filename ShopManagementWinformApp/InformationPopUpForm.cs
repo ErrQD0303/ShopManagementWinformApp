@@ -17,7 +17,7 @@ namespace ShopManagementWinformApp
         public InformationPopUpForm(string? message)
         {
             InitializeComponent();
-            label1.Text = message ?? "No message";
+            Text = message ?? "No message";
 
             CloseAfterDelay(5000);
         }
@@ -32,6 +32,11 @@ namespace ShopManagementWinformApp
             }
 
             this.Close();
+        }
+
+        private void InformationPopUpForm_Load(object sender, EventArgs e)
+        {
+            this.Location = new Point(Owner!.Location.X + 1068, Owner!.Location.Y + 37);
         }
     }
 }

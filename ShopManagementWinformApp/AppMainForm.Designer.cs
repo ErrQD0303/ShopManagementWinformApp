@@ -44,15 +44,15 @@
             btnInsert = new Button();
             panel2 = new Panel();
             ProductDataGridView = new DataGridView();
-            tableLayoutPanelSelect = new TableLayoutPanel();
-            btnTest = new Button();
-            btnProduct = new Button();
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             productIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ProductName = new DataGridViewTextBoxColumn();
             descriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             updateBtn = new DataGridViewButtonColumn();
             deleteBtn = new DataGridViewButtonColumn();
+            tableLayoutPanelSelect = new TableLayoutPanel();
+            btnTest = new Button();
+            btnProduct = new Button();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -197,51 +197,6 @@
             ProductDataGridView.TabIndex = 2;
             ProductDataGridView.CellContentClick += ProductDataGridView_CellContentClick;
             // 
-            // tableLayoutPanelSelect
-            // 
-            tableLayoutPanelSelect.ColumnCount = 1;
-            tableLayoutPanelSelect.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanelSelect.Controls.Add(btnTest, 0, 1);
-            tableLayoutPanelSelect.Controls.Add(btnProduct, 0, 0);
-            tableLayoutPanelSelect.Location = new Point(-1, 101);
-            tableLayoutPanelSelect.Name = "tableLayoutPanelSelect";
-            tableLayoutPanelSelect.RowCount = 3;
-            tableLayoutPanelSelect.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tableLayoutPanelSelect.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tableLayoutPanelSelect.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanelSelect.Size = new Size(243, 599);
-            tableLayoutPanelSelect.TabIndex = 4;
-            // 
-            // btnTest
-            // 
-            btnTest.BackColor = Color.White;
-            btnTest.Dock = DockStyle.Fill;
-            btnTest.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTest.ForeColor = Color.FromArgb(24, 73, 44);
-            btnTest.Location = new Point(0, 35);
-            btnTest.Margin = new Padding(0);
-            btnTest.Name = "btnTest";
-            btnTest.Size = new Size(243, 35);
-            btnTest.TabIndex = 1;
-            btnTest.Text = "TEST BUTTON";
-            btnTest.UseVisualStyleBackColor = false;
-            btnTest.Click += TablePanelButton_Click;
-            // 
-            // btnProduct
-            // 
-            btnProduct.BackColor = Color.White;
-            btnProduct.Dock = DockStyle.Fill;
-            btnProduct.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btnProduct.ForeColor = Color.FromArgb(24, 73, 44);
-            btnProduct.Location = new Point(0, 0);
-            btnProduct.Margin = new Padding(0);
-            btnProduct.Name = "btnProduct";
-            btnProduct.Size = new Size(243, 35);
-            btnProduct.TabIndex = 0;
-            btnProduct.Text = "PRODUCT";
-            btnProduct.UseVisualStyleBackColor = false;
-            btnProduct.Click += TablePanelButton_Click;
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             iDDataGridViewTextBoxColumn.DataPropertyName = "DisplayID";
@@ -315,6 +270,51 @@
             deleteBtn.Resizable = DataGridViewTriState.False;
             deleteBtn.Text = "🗑DELETE";
             deleteBtn.UseColumnTextForButtonValue = true;
+            // 
+            // tableLayoutPanelSelect
+            // 
+            tableLayoutPanelSelect.ColumnCount = 1;
+            tableLayoutPanelSelect.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelSelect.Controls.Add(btnTest, 0, 1);
+            tableLayoutPanelSelect.Controls.Add(btnProduct, 0, 0);
+            tableLayoutPanelSelect.Location = new Point(-1, 101);
+            tableLayoutPanelSelect.Name = "tableLayoutPanelSelect";
+            tableLayoutPanelSelect.RowCount = 3;
+            tableLayoutPanelSelect.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanelSelect.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanelSelect.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelSelect.Size = new Size(243, 599);
+            tableLayoutPanelSelect.TabIndex = 4;
+            // 
+            // btnTest
+            // 
+            btnTest.BackColor = Color.White;
+            btnTest.Dock = DockStyle.Fill;
+            btnTest.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTest.ForeColor = Color.FromArgb(24, 73, 44);
+            btnTest.Location = new Point(0, 35);
+            btnTest.Margin = new Padding(0);
+            btnTest.Name = "btnTest";
+            btnTest.Size = new Size(243, 35);
+            btnTest.TabIndex = 1;
+            btnTest.Text = "TEST BUTTON";
+            btnTest.UseVisualStyleBackColor = false;
+            btnTest.Click += TablePanelButton_Click;
+            // 
+            // btnProduct
+            // 
+            btnProduct.BackColor = Color.White;
+            btnProduct.Dock = DockStyle.Fill;
+            btnProduct.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnProduct.ForeColor = Color.FromArgb(24, 73, 44);
+            btnProduct.Location = new Point(0, 0);
+            btnProduct.Margin = new Padding(0);
+            btnProduct.Name = "btnProduct";
+            btnProduct.Size = new Size(243, 35);
+            btnProduct.TabIndex = 0;
+            btnProduct.Text = "PRODUCT";
+            btnProduct.UseVisualStyleBackColor = false;
+            btnProduct.Click += TablePanelButton_Click;
             // 
             // AppMainForm
             // 
