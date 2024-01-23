@@ -23,26 +23,26 @@ namespace DAL
 
         private async Task Execute(IProduct entity, string queryStr)
         {
-            var properties = typeof(IProduct).GetProperties();
+            var properties = typeof(IProduct).GetProperties()
+                .Where(x => !(x.Name == nameof(IProduct.DisplayID) || x.Name == nameof(IProduct.IsActived) || x.Name == nameof(IProduct.IsDeleted) || x.Name == nameof(IProduct.Version))).ToArray();
             if (properties.Length == 0)
                 throw new ArgumentException(nameof(properties));
             string propertiesString = string.Empty;
             string valueString = string.Empty;
-            object[] parameters = new object[properties.Length + 2];
+            object[] parameters = new object[properties.Length + 3];
             var count = 0;
             for (var i = 0; i < properties.Length; i++)
             {
-                if (properties[i].Name == nameof(IProduct.ID) || properties[i].Name == nameof(IProduct.IsActived) || properties[i].Name == nameof(IProduct.IsDeleted))
-                    continue;
                 propertiesString += properties[i].Name + ", ";
                 valueString += $"@p{count}, ";
                 parameters[count] = properties[i].GetValue(entity);
                 ++count;
             }
-            propertiesString += "IsDeleted, IsActived";
-            valueString += $"@p{count}, @p{count + 1}";
+            propertiesString += "IsDeleted, IsActived, Version";
+            valueString += $"@p{count}, @p{count + 1}, @p{count + 2}";
             parameters[count] = false;
             parameters[count + 1] = true;
+            parameters[count + 2] = 1;
             var query = String.Format(queryStr, propertiesString, valueString);
             await _connection!.Execute(query, parameters);
         }
@@ -59,14 +59,16 @@ namespace DAL
 
             var str = $"UPDATE Product SET {{0}} WHERE Id = {entity.ID}";
             StringBuilder sb = new StringBuilder();
-            var properties = typeof(IProduct).GetProperties();
-            object[]? parameters = new object[properties.Length];
+            var properties = typeof(IProduct).GetProperties().Where(x => !x.Name.Contains("ID") || x.Name == nameof(IProduct.Version)).ToArray();
+            object[]? parameters = new object[properties.Length + 1];
             for (var i = 0; i < properties.Length; ++i)
             {
                 sb.Append($"{properties[i].Name} = @p{i}, ");
                 parameters[i] = properties[i].GetValue(entity);
             }
-            sb.Remove(sb.Length - 2, 2);
+
+            sb.Append($"{nameof(IProduct.Version)} = @p{properties.Length}");
+            parameters[properties.Length] = entity.Version + 1;
             var query = string.Format(str, sb.ToString());
             await _connection!.Execute(query, parameters);
         }

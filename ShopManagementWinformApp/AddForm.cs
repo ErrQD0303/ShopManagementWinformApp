@@ -17,7 +17,6 @@ namespace ShopManagementWinformApp
 {
     public partial class AddForm : Form
     {
-        private string? _callerMethodName;
         private readonly IProduct? _product;
         public AddForm(IProduct? product = null)
         {
@@ -27,22 +26,35 @@ namespace ShopManagementWinformApp
 
         private void BtnAddUpdate_Click(object sender, EventArgs e)
         {
-            if (_product is null)
+            try
             {
-                var product = Program.CBInstance?.Resolve<IProduct>();
-                product!.ProductName = txbInputProductName.Text;
-                product!.Description = richtxbInputProductDescription.Text;
-                Program._unitOfWork?.ProductBLL.Add(product);
+                if (_product is null)
+                {
+                    var product = Program.CBInstance?.Resolve<IProduct>();
+                    product!.ProductName = txbInputProductName.Text;
+                    product!.Description = richtxbInputProductDescription.Text;
+                    Program._unitOfWork?.ProductBLL.Add(product);
+                    if (Owner is AppMainForm amf)
+                        amf.ChangedPageValueInvoke();
+                }
+                else
+                {
+                    var product = _product;
+                    product!.ProductName = txbInputProductName.Text;
+                    product!.Description = richtxbInputProductDescription.Text;
+                    var t = Program._unitOfWork?.ProductBLL.Update(product);
+                    if (t!.IsFaulted)
+                    {
+                        this.DialogResult = DialogResult.Abort;
+                        return;
+                    }
+                }
+                this.DialogResult = DialogResult.OK;
             }
-            else
+            finally
             {
-                var product = _product;
-                product!.ProductName = txbInputProductName.Text;
-                product!.Description = richtxbInputProductDescription.Text;
-                Program._unitOfWork?.ProductBLL.Update(product);
+                this.Close();
             }
-            this.DialogResult = DialogResult.OK;
-            this.Close();
         }
 
         private void AddForm_Load(object sender, EventArgs e)
