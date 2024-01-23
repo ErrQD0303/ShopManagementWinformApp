@@ -18,7 +18,8 @@ namespace ShopManagementWinformApp
 {
     public partial class AppMainForm : Form
     {
-        public event Action<long?> ChangedPageValue;
+        private event Action<long?> ChangedPageValue;
+        private event Action<string> OnDataChanged;
 
         private IEnumerable<IProduct>? _products;
         private long _page = 0;
@@ -29,17 +30,18 @@ namespace ShopManagementWinformApp
             InitializeComponent();
             ChangedPageValue += ChangePageValue;
             _signalRServer = Program.CBInstance.Resolve<ISignalRServer>();
+            OnDataChanged += PopupMessage;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             try
             {
-                CreateWebHostBuilder().Build().RunAsync();
                 _signalRServer?.Start();
                 _signalRServer!.AddMessage += (user, message) =>
                 {
-                    LoadProductTable(refillProduct: true);
+                    this.Invoke(() => OnDataChanged.Invoke(message));
+                    this.Invoke(() => LoadProductTable(refillProduct: true));
                 };
                 LoadProductTable(refillProduct: true);
                 hPageScrollBar.Value = (int)_page;
@@ -50,10 +52,6 @@ namespace ShopManagementWinformApp
                 Debug.WriteLine(ex);
             }
         }
-
-        private static IWebHostBuilder CreateWebHostBuilder() =>
-            WebHost.CreateDefaultBuilder()
-                .UseStartup<SU>();
 
         private void LoadProductTable(bool refillProduct = false)
         {
@@ -86,6 +84,7 @@ namespace ShopManagementWinformApp
         private void ProductDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
+            string? message = null;
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
@@ -102,12 +101,14 @@ namespace ShopManagementWinformApp
                             ChangePageValue(_page - 1);
                         LoadProductTable(refillProduct: true);
                     }
+                    message = "Deleted";
                 }
                 else if (senderGrid.Columns[e.ColumnIndex].Name.Equals("updateBtn"))
                 {
                     UpdateButton_Click(sender, e);
+                    message = "Updated";
                 }
-                _signalRServer!.Send("user", "message");
+                OnDataChangedInvoke(product, message!);
             }
         }
 
@@ -171,7 +172,6 @@ namespace ShopManagementWinformApp
                 {
                     throw new DBConcurrencyException();
                 }
-                _signalRServer!.Send("user", "insert");
             }
             finally
             {
@@ -195,36 +195,21 @@ namespace ShopManagementWinformApp
         {
             ChangedPageValue?.Invoke(null);
         }
-    }
-    public class SU
-    {
-        public SU(IConfiguration configuration)
+
+        public void OnDataChangedInvoke(object? o, string message)
         {
-            Configuration = configuration;
-        }
-
-        public IConfiguration Configuration { get;}
-
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddSignalR();
-        }
-
-        public void Configure(IApplicationBuilder app)
-        {
-            app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
+            if (o is not null && o is IProduct product)
             {
-                endpoints.MapHub<AppHub>("/appHub");
-            });
+                message = $"{product.ProductID} {message}";
+            }
+
+            _signalRServer!.Send("user", message);
         }
-    }
-    public class AppHub : Hub
-    {
-        public async Task SendMessage(string user, string message)
+
+        private void PopupMessage(string? message)
         {
-            await Clients.All.SendAsync("SendMessage", user, message);
+            InformationPopUpForm informationPopUpForm = new(message);
+            informationPopUpForm.Show(this);
         }
     }
 }

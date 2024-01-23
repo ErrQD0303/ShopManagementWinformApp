@@ -35,7 +35,11 @@ namespace ShopManagementWinformApp
                     product!.Description = richtxbInputProductDescription.Text;
                     Program._unitOfWork?.ProductBLL.Add(product);
                     if (Owner is AppMainForm amf)
+                    {
                         amf.ChangedPageValueInvoke();
+                        amf.OnDataChangedInvoke(product, "Added");
+                    }
+                    
                 }
                 else
                 {

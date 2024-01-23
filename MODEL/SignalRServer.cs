@@ -15,8 +15,8 @@ namespace MODEL
         }
         public event Action<string, string> AddMessage
         {
-            add => _hubConnection!.On("ReceiveMessage", value);
-            remove => _hubConnection!.Remove("ReceiveMessage");
+            add => _hubConnection!.On("SendMessage", value);
+            remove => _hubConnection!.Remove("SendMessage");
         }
         public async Task Start()
         {
@@ -25,7 +25,7 @@ namespace MODEL
 
         public async Task Send(string user, string message)
         {
-            await _hubConnection!.InvokeCoreAsync("SendMessage", args: new[] {user, message});
+            await _hubConnection!.InvokeCoreAsync("OnDataChanged", args: new[] {user, message});
         }
     }
 }

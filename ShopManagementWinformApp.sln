@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WFException", "Exception\WF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WFAttribute", "WFAttribute\WFAttribute.csproj", "{BD06DDCE-9B2A-4B5A-9768-1DCBDC0A47B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IUnitOfWork", "IUnitOfWork\IUnitOfWork.csproj", "{E6B960B0-810A-42C4-B942-7820B52D3BB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IUnitOfWork", "IUnitOfWork\IUnitOfWork.csproj", "{E6B960B0-810A-42C4-B942-7820B52D3BB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
