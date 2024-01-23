@@ -13,6 +13,7 @@ namespace MODEL
         public static ContainerBuilder AddModelDI(this ContainerBuilder cb)
         {
             cb.RegisterType<Product>().As<IProduct>();
+            cb.RegisterType<SignalRServer>().As<ISignalRServer>();
             return cb;
         }
     }

@@ -54,7 +54,14 @@ namespace BLL
             try
             {
                 await Configuration.CheckValidInput(entity);
+                var dbVersion = (await _dal!.Get(x => x.ID == entity.ID))?.Version;
+                if (dbVersion != null && dbVersion > entity.Version)
+                    throw new DBConcurrencyException();
                 await _dal!.Update(entity);
+            }
+            catch (DBConcurrencyException)
+            {
+                throw;
             }
             catch (WrongEntityInformationException)
             {

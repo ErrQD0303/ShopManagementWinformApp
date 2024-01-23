@@ -1,4 +1,10 @@
 ﻿using Autofac;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.SignalR;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using MODEL;
 using MODEL.Contracts;
 using Org.BouncyCastle.Asn1.X509.Qualified;
@@ -12,21 +18,31 @@ namespace ShopManagementWinformApp
 {
     public partial class AppMainForm : Form
     {
-        public event Action<long?> ChangedPageValue;
+        private event Action<long?> ChangedPageValue;
+        private event Action<string> OnDataChanged;
 
         private IEnumerable<IProduct>? _products;
         private long _page = 0;
+        private ISignalRServer? _signalRServer;
         public AppMainForm()
         {
             /*Random Comment*/
             InitializeComponent();
             ChangedPageValue += ChangePageValue;
+            _signalRServer = Program.CBInstance.Resolve<ISignalRServer>();
+            OnDataChanged += PopupMessage;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             try
             {
+                _signalRServer?.Start();
+                _signalRServer!.AddMessage += (user, message) =>
+                {
+                    this.Invoke(() => OnDataChanged.Invoke(message));
+                    this.Invoke(() => LoadProductTable(refillProduct: true));
+                };
                 LoadProductTable(refillProduct: true);
                 hPageScrollBar.Value = (int)_page;
                 txbPage.Text = (_page + 1).ToString();
@@ -50,7 +66,7 @@ namespace ShopManagementWinformApp
             {
                 for (var i = 0; i < filteredProducts.Count(); i++)
                 {
-                    IProduct? product = Program._cbInstance?.Resolve<IProduct>();
+                    IProduct? product = Program.CBInstance?.Resolve<IProduct>();
                     foreach (var p in properties)
                     {
                         p.SetValue(product, p.GetValue(filteredProducts.ElementAt((int)i)));
@@ -68,6 +84,7 @@ namespace ShopManagementWinformApp
         private void ProductDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
+            string? message = null;
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
@@ -84,11 +101,14 @@ namespace ShopManagementWinformApp
                             ChangePageValue(_page - 1);
                         LoadProductTable(refillProduct: true);
                     }
+                    message = "Deleted";
                 }
                 else if (senderGrid.Columns[e.ColumnIndex].Name.Equals("updateBtn"))
                 {
                     UpdateButton_Click(sender, e);
+                    message = "Updated";
                 }
+                OnDataChangedInvoke(product, message!);
             }
         }
 
@@ -174,6 +194,22 @@ namespace ShopManagementWinformApp
         public void ChangedPageValueInvoke()
         {
             ChangedPageValue?.Invoke(null);
+        }
+
+        public void OnDataChangedInvoke(object? o, string message)
+        {
+            if (o is not null && o is IProduct product)
+            {
+                message = $"{product.ProductID} {message}";
+            }
+
+            _signalRServer!.Send("user", message);
+        }
+
+        private void PopupMessage(string? message)
+        {
+            InformationPopUpForm informationPopUpForm = new(message);
+            informationPopUpForm.Show(this);
         }
     }
 }

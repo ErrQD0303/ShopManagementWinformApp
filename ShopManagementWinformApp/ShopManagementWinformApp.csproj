@@ -10,6 +10,9 @@
 
   <ItemGroup>
     <PackageReference Include="AutoFactory" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +23,10 @@
     <ProjectReference Include="..\IUnitOfWork\IUnitOfWork.csproj" />
     <ProjectReference Include="..\MODEL\MODEL.csproj" />
     <ProjectReference Include="..\StartUpDI\StartUpDI.csproj" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
 </Project>
