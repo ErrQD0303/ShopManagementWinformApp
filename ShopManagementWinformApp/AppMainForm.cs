@@ -67,10 +67,10 @@ namespace ShopManagementWinformApp
                 string productName = _filterProduct.ProductName ?? String.Empty;
                 string description = _filterProduct.Description ?? String.Empty;
                 _products = Program._unitOfWork?.ProductBLL
-                    ?.GetAll(filter: x => x.IsActived && !x.IsDeleted 
+                    ?.GetAll(filter: x => x.IsActived && !x.IsDeleted
                     && x.ProductID.Contains(productID)
                     && x.ProductName.Contains(productName)
-                    && x.Description.Contains(description), 
+                    && x.Description.Contains(description),
                     offset: 15 * _page, limit: 15, filterObject: _filterProduct).Result;
             }
 
@@ -254,7 +254,7 @@ namespace ShopManagementWinformApp
                 {
                     _filterProduct.ProductName = filter;
                 }
-                else if (buttonName == "Description")
+                else if (buttonName == "ProductDescription")
                 {
                     _filterProduct.Description = filter;
                 }
@@ -277,7 +277,7 @@ namespace ShopManagementWinformApp
             {
                 toolStripFilterTextBox.Text = _filterProduct.ProductName ?? String.Empty;
             }
-            else if (buttonName == "Description")
+            else if (buttonName == "ProductDescription")
             {
                 toolStripFilterTextBox.Text = _filterProduct.Description ?? String.Empty;
             }
