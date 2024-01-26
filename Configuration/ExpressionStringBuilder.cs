@@ -26,7 +26,7 @@ namespace Config
             switch (expression.NodeType)
             {
                 case ExpressionType.Lambda: //Expression
-                    return Visit(((LambdaExpression)expression).Body, parameters);
+                     return Visit(((LambdaExpression)expression).Body, parameters);
                 case ExpressionType.Equal:                    //Equals                                   
                     return GenerateLeftAndRightClause(expression, "=", parameters);
                 case ExpressionType.NotEqual: //Not Equals
@@ -52,6 +52,22 @@ namespace Config
                     return $"@p{parameters.Count - 1}";
                 case ExpressionType.MemberAccess: //Property Name
                     return ((MemberExpression)expression).Member.Name;
+                case ExpressionType.Call:
+                    var methodCallExpression = (MethodCallExpression)expression;
+                    var methodCallName = methodCallExpression.Method.Name;
+                    var methodCallObject = methodCallExpression.Object;
+                    var methodCallObjectValue = Visit(methodCallObject, parameters);
+                    var methodCallArguments = methodCallExpression.Arguments;
+                    var methodCallArgument = methodCallArguments[0];
+                    var methodCallArgumentValue = GetMemberAccessValue(methodCallArgument, parameters);
+                    if (methodCallName == "Contains")
+                        return $"{methodCallObjectValue} LIKE '%{parameters[parameters.Count - 1]}%'";
+                    else if (methodCallName == "StartsWith")
+                        return $"{methodCallArgumentValue}%";
+                    else if (methodCallName == "EndsWith")
+                        return $"%{methodCallArgumentValue}";
+                    else
+                        throw new NotSupportedException($"Method {methodCallName} not supported");
                 default:
                     throw new NotSupportedException($"Expression type {expression.NodeType} not supported");
             }

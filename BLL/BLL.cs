@@ -9,11 +9,12 @@ using System.Reflection;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using WFAttribute;
 
 namespace BLL
 {
     public abstract class BLL<T> : IBLL<T>
-        where T: class
+        where T : class
     {
         #region Fields
         protected readonly IDAL<T>? _dal;
@@ -24,8 +25,10 @@ namespace BLL
         #endregion
 
         #region Methods
-        public Task<IEnumerable<T>> GetAll(long offset, long limit, Expression<Func<T, bool>>? filter = null) 
-            => _dal!.GetAll(filter: filter, offset: offset, limit: limit);
+        public async Task<IEnumerable<T>> GetAll(T filterObject, long offset, long limit, Expression<Func<T, bool>>? filter = null)
+        {
+            return _dal!.GetAll(offset: offset, limit: limit, filter: filter).Result;
+        }
 
         public Task<T?> Get(Expression<Func<T, bool>>? filter = null)
             => _dal!.Get(filter);
@@ -36,5 +39,16 @@ namespace BLL
 
         public abstract Task Remove(int id);
         #endregion
+    }
+
+    public class AndAlsoModifier : ExpressionVisitor
+    {
+        public Expression Modify(Expression? expression)
+        {
+            if (expression is null)
+                throw new ArgumentNullException(nameof(expression));
+            return Visit(expression);
+        }
+
     }
 }

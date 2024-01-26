@@ -18,9 +18,9 @@ namespace MODEL
 
         #region properties
         public long ID { get => _id; set => _id = value; }
-        public string ProductID { get => _productID ?? throw new ArgumentNullException(); set => _productID = value; }
-        public string ProductName { get => _productName ?? throw new ArgumentNullException(); set => _productName = value; }
-        public string Description { get => _description ?? throw new ArgumentNullException(); set => _description = value; }
+        public string ProductID { get => _productID; set => _productID = value ?? throw new ArgumentNullException(); }
+        public string ProductName { get => _productName; set => _productName = value; }
+        public string Description { get => _description; set => _description = value; }
         public bool IsActived { get => _isActived; set => _isActived = value; }
         public bool IsDeleted { get => _isDeleted; set => _isDeleted = value; }
         public long DisplayID { get => _displayID; set => _displayID = value; }

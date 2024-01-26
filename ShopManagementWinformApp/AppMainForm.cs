@@ -11,6 +11,7 @@ using Org.BouncyCastle.Asn1.X509.Qualified;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
+using System.Linq.Expressions;
 using ZstdSharp.Unsafe;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -24,12 +25,14 @@ namespace ShopManagementWinformApp
         private IEnumerable<IProduct>? _products;
         private long _page = 0;
         private ISignalRServer? _signalRServer;
+        private IProduct _filterProduct;
         public AppMainForm()
         {
             /*Random Comment*/
             InitializeComponent();
             ChangedPageValue += ChangePageValue;
             _signalRServer = Program.CBInstance.Resolve<ISignalRServer>();
+            _filterProduct = Program.CBInstance.Resolve<IProduct>();
             OnDataChanged += PopupMessage;
         }
 
@@ -60,10 +63,18 @@ namespace ShopManagementWinformApp
 
             if (refillProduct)
             {
-                _products = Program._unitOfWork?.ProductBLL?.GetAll(filter: x => !x.IsDeleted && x.IsActived, offset: 15 * _page, limit: 15).Result;
+                string productID = _filterProduct.ProductID ?? String.Empty;
+                string productName = _filterProduct.ProductName ?? String.Empty;
+                string description = _filterProduct.Description ?? String.Empty;
+                _products = Program._unitOfWork?.ProductBLL
+                    ?.GetAll(filter: x => x.IsActived && !x.IsDeleted 
+                    && x.ProductID.Contains(productID)
+                    && x.ProductName.Contains(productName)
+                    && x.Description.Contains(description), 
+                    offset: 15 * _page, limit: 15, filterObject: _filterProduct).Result;
             }
 
-            if (_products!.Count() == 0)
+            if (_products!.Count() == 0 && _page > 0)
             {
                 --hPageScrollBar.Value;
                 _page = hPageScrollBar.Value;
@@ -220,6 +231,56 @@ namespace ShopManagementWinformApp
         private void button1_Click(object sender, EventArgs e)
         {
             contextMenuStrip1.Show((System.Windows.Forms.Button)sender, new Point(0, btnMenuProductName.Height));
+        }
+
+        private void filterToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripFilterTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                var filter = toolStripFilterTextBox.Text;
+
+                var buttonName = contextMenuStrip1.SourceControl?.Name.Substring(7);
+
+                if (buttonName == "ProductID")
+                {
+                    _filterProduct.ProductID = filter;
+                }
+                else if (buttonName == "ProductName")
+                {
+                    _filterProduct.ProductName = filter;
+                }
+                else if (buttonName == "Description")
+                {
+                    _filterProduct.Description = filter;
+                }
+
+                LoadProductTable(refillProduct: true);
+                return;
+
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            var buttonName = contextMenuStrip1.SourceControl?.Name.Substring(7);
+
+            if (buttonName == "ProductID")
+            {
+                toolStripFilterTextBox.Text = _filterProduct.ProductID ?? String.Empty;
+            }
+            else if (buttonName == "ProductName")
+            {
+                toolStripFilterTextBox.Text = _filterProduct.ProductName ?? String.Empty;
+            }
+            else if (buttonName == "Description")
+            {
+                toolStripFilterTextBox.Text = _filterProduct.Description ?? String.Empty;
+            }
         }
     }
 }

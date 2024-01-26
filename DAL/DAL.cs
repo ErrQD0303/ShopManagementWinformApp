@@ -61,6 +61,7 @@ namespace DAL
                 if (offset > 0)
                     query.Append($" OFFSET {offset}");
 
+                query.Append(";");
                 return _connection.LoadData(query.ToString(), parameterizedArray).Tables[0].Rows.Cast<DataRow>().Select(Config.Configuration.CreateObject<T>);
             }
             catch (Exception)

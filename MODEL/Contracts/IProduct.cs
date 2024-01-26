@@ -11,9 +11,11 @@ namespace MODEL.Contracts
     {
         #region properties
         long ID { get; set; }
+        [Filter]
         string ProductID { get; set; }
-        [Name]
+        [Name, Filter]
         string ProductName { get; set; }
+        [Filter]
         string Description { get; set; }
         bool IsActived { get; set; }
         bool IsDeleted { get; set; }
