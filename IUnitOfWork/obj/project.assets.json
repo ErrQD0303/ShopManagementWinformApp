@@ -698,6 +698,19 @@
           "System.Xml.XDocument": "4.0.11"
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "runtime.native.System/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -2056,7 +2069,8 @@
         "dependencies": {
           "Config": "1.0.0",
           "DAL": "1.0.0",
-          "MODEL": "1.0.0"
+          "MODEL": "1.0.0",
+          "NewtonSoft.Json": "13.0.3"
         },
         "compile": {
           "bin/placeholder/BLL.dll": {}
@@ -2070,6 +2084,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "MODEL": "1.0.0",
+          "NewtonSoft.Json": "13.0.3",
           "WFAttribute": "1.0.0",
           "WFException": "1.0.0"
         },
@@ -2087,7 +2102,8 @@
           "AutoFactory": "6.0.0",
           "Microsoft.Extensions.Configuration.Binder": "8.0.0",
           "Microsoft.Extensions.Configuration.Json": "8.0.0",
-          "MySql.Data": "8.2.0"
+          "MySql.Data": "8.2.0",
+          "NewtonSoft.Json": "13.0.3"
         },
         "compile": {
           "bin/placeholder/CONNECTIONS.dll": {}
@@ -2104,7 +2120,8 @@
           "CONNECTIONS": "1.0.0",
           "Config": "1.0.0",
           "MODEL": "1.0.0",
-          "MySql.Data": "8.2.0"
+          "MySql.Data": "8.2.0",
+          "NewtonSoft.Json": "13.0.3"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -2120,6 +2137,7 @@
           "AutoFactory": "6.0.0",
           "Microsoft.AspNetCore.SignalR.Client": "8.0.1",
           "Microsoft.AspNetCore.SignalR.Client.Core": "8.0.1",
+          "NewtonSoft.Json": "13.0.3",
           "WFAttribute": "1.0.0"
         },
         "compile": {
@@ -2132,6 +2150,9 @@
       "WFAttribute/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "NewtonSoft.Json": "13.0.3"
+        },
         "compile": {
           "bin/placeholder/WFAttribute.dll": {}
         },
@@ -2142,6 +2163,9 @@
       "WFException/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "NewtonSoft.Json": "13.0.3"
+        },
         "compile": {
           "bin/placeholder/WFException.dll": {}
         },
@@ -3133,6 +3157,36 @@
         "dotnet_library_license.txt",
         "netstandard.library.1.6.0.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "runtime.native.System/4.0.0": {
@@ -6794,7 +6848,8 @@
     "net7.0": [
       "AutoFactory >= 6.0.0",
       "BLL >= 1.0.0",
-      "MODEL >= 1.0.0"
+      "MODEL >= 1.0.0",
+      "NewtonSoft.Json >= 13.0.3"
     ]
   },
   "packageFolders": {
@@ -6852,6 +6907,10 @@
           "AutoFactory": {
             "target": "Package",
             "version": "[6.0.0, )"
+          },
+          "NewtonSoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
           }
         },
         "imports": [

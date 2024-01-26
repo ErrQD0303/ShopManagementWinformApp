@@ -46,7 +46,7 @@ namespace Config
                 case ExpressionType.Not: //Not
                     var notExpression = (UnaryExpression)expression;
                     var operandNot = Visit(notExpression.Operand, parameters);
-                    return $"NOT ({operandNot})";
+                    return $"NOT {operandNot}";
                 case ExpressionType.Constant: //Property Value
                     parameters.Add(((ConstantExpression)expression).Value);
                     return $"@p{parameters.Count - 1}";
@@ -63,7 +63,11 @@ namespace Config
 
             var binaryEqualExpression = (BinaryExpression)expression;
             var left = Visit(binaryEqualExpression.Left, parameters);
-            var right = GetMemberAccessValue(binaryEqualExpression.Right, parameters);
+            string? right;
+            if (op == "AND" || op == "OR")
+                right = Visit(binaryEqualExpression.Right, parameters);
+            else
+                right = GetMemberAccessValue(binaryEqualExpression.Right, parameters);
             return $"{left} {op} {right}";
         }
 
@@ -77,7 +81,7 @@ namespace Config
                 var memberExpression = (MemberExpression)expression;
 
                 var memberValue = Expression.Lambda(memberExpression).Compile().DynamicInvoke();
-              
+
                 parameters.Add(memberValue);
                 return $"@p{parameters.Count - 1}";
             }

@@ -54,6 +54,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "NewtonSoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -130,6 +136,10 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[8.2.0, )"
+            },
+            "NewtonSoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -210,6 +220,10 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[8.2.0, )"
+            },
+            "NewtonSoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -272,6 +286,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "NewtonSoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -348,6 +368,10 @@
             "Microsoft.AspNetCore.SignalR.Client.Core": {
               "target": "Package",
               "version": "[8.0.1, )"
+            },
+            "NewtonSoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -410,6 +434,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "NewtonSoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

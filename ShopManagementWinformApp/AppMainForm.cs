@@ -57,26 +57,35 @@ namespace ShopManagementWinformApp
         {
             if (ProductDataGridView.Rows.Count > 0)
                 ProductDataGridView.Rows.Clear();
-            var products = Program._unitOfWork?.ProductBLL?.GetAll().Result;
+
             if (refillProduct)
-                _products = products?.Where(x => x.IsDeleted == false && x.IsActived == true);
-            var filteredProducts = _products?.Take(new Range((Index)(15 * _page), (Index)(15 * _page + 15)));
-            var properties = typeof(IProduct).GetProperties();
-            if (filteredProducts?.Count() > 0)
             {
-                for (var i = 0; i < filteredProducts.Count(); i++)
+                _products = Program._unitOfWork?.ProductBLL?.GetAll(filter: x => !x.IsDeleted && x.IsActived, offset: 15 * _page, limit: 15).Result;
+            }
+
+            if (_products!.Count() == 0)
+            {
+                --hPageScrollBar.Value;
+                _page = hPageScrollBar.Value;
+                return;
+            }
+
+            var properties = typeof(IProduct).GetProperties();
+            if (_products?.Count() > 0)
+            {
+                for (var i = 0; i < _products.Count(); i++)
                 {
                     IProduct? product = Program.CBInstance?.Resolve<IProduct>();
                     foreach (var p in properties)
                     {
-                        p.SetValue(product, p.GetValue(filteredProducts.ElementAt((int)i)));
+                        p.SetValue(product, p.GetValue(_products.ElementAt((int)i)));
                     }
                     properties.FirstOrDefault(x => x.Name == "DisplayID")?.SetValue(product, 15 * _page + i + 1);
                     bindingSource1.Add(product);
                 }
             }
 
-            btnInsert.Location = new System.Drawing.Point(0, 35 * (filteredProducts!.Count() + 1));
+            btnInsert.Location = new System.Drawing.Point(0, 35 * (_products!.Count() + 1));
 
             ProductDataGridView.ClearSelection();
         }
@@ -97,7 +106,7 @@ namespace ShopManagementWinformApp
                     {
                         var databaseProduct = Program._unitOfWork?.ProductBLL?.Get(x => x.ProductID == product.ProductID).Result;
                         Program._unitOfWork?.ProductBLL?.Remove((int)databaseProduct!.ID);
-                        if (_products!.Count() % 15 == 1 && _page > 0)
+                        if (_products!.Count() == 1 && _page > 0)
                             ChangePageValue(_page - 1);
                         LoadProductTable(refillProduct: true);
                     }
@@ -145,16 +154,9 @@ namespace ShopManagementWinformApp
 
         private void HPageScrollBar_ValueChanged(object sender, EventArgs e)
         {
-            if ((_products!.Count() - 1) / 15 >= hPageScrollBar.Value)
-            {
-                _page = hPageScrollBar.Value;
-                txbPage.Text = (_page + 1).ToString();
-                LoadProductTable();
-            }
-            else
-            {
-                hPageScrollBar.Value = (int)_page;
-            }
+            _page = hPageScrollBar.Value;
+            LoadProductTable(true);
+            txbPage.Text = (_page + 1).ToString();
         }
 
         private void BtnInsert_Click(object sender, EventArgs e)
@@ -181,12 +183,7 @@ namespace ShopManagementWinformApp
 
         private void ChangePageValue(long? value)
         {
-            if (value == null)
-            {
-                _page = _products!.Count() / 15;
-            }
-            else
-                _page = value.Value;
+            _page = value!.Value;
             hPageScrollBar.Value = (int)_page;
             txbPage.Text = (hPageScrollBar.Value + 1).ToString();
         }

@@ -29,7 +29,7 @@ namespace DAL
                 throw new ArgumentException(nameof(properties));
             string propertiesString = string.Empty;
             string valueString = string.Empty;
-            object[] parameters = new object[properties.Length + 3];
+            object?[] parameters = new object[properties.Length + 3];
             var count = 0;
             for (var i = 0; i < properties.Length; i++)
             {
@@ -64,7 +64,7 @@ namespace DAL
             for (var i = 0; i < properties.Length; ++i)
             {
                 sb.Append($"{properties[i].Name} = @p{i}, ");
-                parameters[i] = properties[i].GetValue(entity);
+                parameters[i] = properties[i].GetValue(entity)!;
             }
 
             sb.Append($"{nameof(IProduct.Version)} = @p{properties.Length}");

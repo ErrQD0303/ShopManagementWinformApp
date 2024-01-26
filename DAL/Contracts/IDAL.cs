@@ -11,7 +11,7 @@ namespace DAL.Contracts
     public interface IDAL<T>
         where T : class
     {
-        Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>>? filter = null);
+        Task<IEnumerable<T>> GetAll(long offset, long limit, Expression<Func<T, bool>>? filter = null);
         Task<T?> Get(Expression<Func<T, bool>>? filter = null);
         Task Add(T entity);
         Task Update(T entity);

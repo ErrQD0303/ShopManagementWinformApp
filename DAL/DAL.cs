@@ -28,7 +28,7 @@ namespace DAL
         {
             try
             {
-                var result = await GetAll(filter);
+                var result = await GetAll(filter: filter, offset: 0, limit: -1);
 
                 return result?.FirstOrDefault();
             }
@@ -38,13 +38,12 @@ namespace DAL
             }
         }
 
-        public async Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>>? filter = null)
+        public async Task<IEnumerable<T>> GetAll(long offset, long limit, Expression<Func<T, bool>>? filter = null)
         {
             try
             {
                 if (_connection is null)
                     throw new ArgumentNullException();
-
                 StringBuilder query = new StringBuilder("SELECT * FROM " + typeof(T).Name.Substring(1));
                 object[]? parameterizedArray = null;
                 if (filter != null)
@@ -53,6 +52,15 @@ namespace DAL
                     (var whereClause, parameterizedArray) = filter.ToSqlWhereWithParameters();
                     query.Append(" WHERE " + whereClause);
                 }
+
+                if (limit > 0)
+                {
+                    query.Append($" LIMIT {limit}");
+                }
+
+                if (offset > 0)
+                    query.Append($" OFFSET {offset}");
+
                 return _connection.LoadData(query.ToString(), parameterizedArray).Tables[0].Rows.Cast<DataRow>().Select(Config.Configuration.CreateObject<T>);
             }
             catch (Exception)

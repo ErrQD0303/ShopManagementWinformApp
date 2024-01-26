@@ -10,3 +10,4 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.0\refint\WFAttribute.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.0\WFAttribute.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.0\ref\WFAttribute.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\WFAttribute\obj\Debug\net7.0\WFAttribute.csproj.AssemblyReference.cache

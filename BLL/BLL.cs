@@ -24,8 +24,8 @@ namespace BLL
         #endregion
 
         #region Methods
-        public Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>>? filter = null) 
-            => _dal!.GetAll(filter);
+        public Task<IEnumerable<T>> GetAll(long offset, long limit, Expression<Func<T, bool>>? filter = null) 
+            => _dal!.GetAll(filter: filter, offset: offset, limit: limit);
 
         public Task<T?> Get(Expression<Func<T, bool>>? filter = null)
             => _dal!.Get(filter);

@@ -10,3 +10,4 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\refint\WFException.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\WFException.pdb
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\ref\WFException.dll
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\Exception\obj\Debug\net7.0\WFException.csproj.AssemblyReference.cache
