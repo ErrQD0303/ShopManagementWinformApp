@@ -83,3 +83,4 @@ C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bi
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\Microsoft.AspNetCore.Server.Kestrel.Https.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\bin\Debug\net7.0-windows\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
 C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.InformationPopUpForm.resources
+C:\Users\ADMIN\source\repos\ShopManagementWinformApp\ShopManagementWinformApp\obj\Debug\net7.0-windows\ShopManagementWinformApp.Properties.Resources.resources

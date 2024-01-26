@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppMainForm));
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             bindingSource1 = new BindingSource(components);
             mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
             panel1 = new Panel();
@@ -43,9 +44,16 @@
             label1 = new Label();
             btnInsert = new Button();
             panel2 = new Panel();
+            btnMenuProductDescription = new Button();
+            btnMenuProductName = new Button();
+            btnMenuProductID = new Button();
             ProductDataGridView = new DataGridView();
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             productIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            filterToolStripMenuItem = new ToolStripMenuItem();
+            filterToolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripTextBox1 = new ToolStripTextBox();
             ProductName = new DataGridViewTextBoxColumn();
             descriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             updateBtn = new DataGridViewButtonColumn();
@@ -57,6 +65,7 @@
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ProductDataGridView).BeginInit();
+            contextMenuStrip1.SuspendLayout();
             tableLayoutPanelSelect.SuspendLayout();
             SuspendLayout();
             // 
@@ -136,12 +145,54 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnMenuProductDescription);
+            panel2.Controls.Add(btnMenuProductName);
+            panel2.Controls.Add(btnMenuProductID);
             panel2.Controls.Add(btnInsert);
             panel2.Controls.Add(ProductDataGridView);
             panel2.Location = new Point(243, 101);
             panel2.Name = "panel2";
             panel2.Size = new Size(1005, 598);
             panel2.TabIndex = 3;
+            // 
+            // btnMenuProductDescription
+            // 
+            btnMenuProductDescription.BackgroundImage = (Image)resources.GetObject("btnMenuProductDescription.BackgroundImage");
+            btnMenuProductDescription.BackgroundImageLayout = ImageLayout.Zoom;
+            btnMenuProductDescription.FlatAppearance.BorderSize = 0;
+            btnMenuProductDescription.FlatStyle = FlatStyle.Flat;
+            btnMenuProductDescription.Location = new Point(731, 9);
+            btnMenuProductDescription.Name = "btnMenuProductDescription";
+            btnMenuProductDescription.Size = new Size(21, 21);
+            btnMenuProductDescription.TabIndex = 5;
+            btnMenuProductDescription.UseVisualStyleBackColor = true;
+            btnMenuProductDescription.Click += button1_Click;
+            // 
+            // btnMenuProductName
+            // 
+            btnMenuProductName.BackgroundImage = (Image)resources.GetObject("btnMenuProductName.BackgroundImage");
+            btnMenuProductName.BackgroundImageLayout = ImageLayout.Zoom;
+            btnMenuProductName.FlatAppearance.BorderSize = 0;
+            btnMenuProductName.FlatStyle = FlatStyle.Flat;
+            btnMenuProductName.Location = new Point(382, 9);
+            btnMenuProductName.Name = "btnMenuProductName";
+            btnMenuProductName.Size = new Size(21, 21);
+            btnMenuProductName.TabIndex = 5;
+            btnMenuProductName.UseVisualStyleBackColor = true;
+            btnMenuProductName.Click += button1_Click;
+            // 
+            // btnMenuProductID
+            // 
+            btnMenuProductID.BackgroundImage = (Image)resources.GetObject("btnMenuProductID.BackgroundImage");
+            btnMenuProductID.BackgroundImageLayout = ImageLayout.Zoom;
+            btnMenuProductID.FlatAppearance.BorderSize = 0;
+            btnMenuProductID.FlatStyle = FlatStyle.Flat;
+            btnMenuProductID.Location = new Point(132, 9);
+            btnMenuProductID.Name = "btnMenuProductID";
+            btnMenuProductID.Size = new Size(21, 21);
+            btnMenuProductID.TabIndex = 5;
+            btnMenuProductID.UseVisualStyleBackColor = true;
+            btnMenuProductID.Click += button1_Click;
             // 
             // ProductDataGridView
             // 
@@ -152,27 +203,27 @@
             ProductDataGridView.AutoGenerateColumns = false;
             ProductDataGridView.BackgroundColor = SystemColors.Control;
             ProductDataGridView.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(24, 73, 44);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(24, 73, 44);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            ProductDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(24, 73, 44);
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(24, 73, 44);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            ProductDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             ProductDataGridView.ColumnHeadersHeight = 35;
             ProductDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             ProductDataGridView.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, productIDDataGridViewTextBoxColumn, ProductName, descriptionDataGridViewTextBoxColumn, updateBtn, deleteBtn });
             ProductDataGridView.Cursor = Cursors.Hand;
             ProductDataGridView.DataSource = bindingSource1;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(24, 73, 44);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(8, 127, 91);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(230, 252, 245);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            ProductDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = SystemColors.Window;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(24, 73, 44);
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(8, 127, 91);
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(230, 252, 245);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            ProductDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
             ProductDataGridView.Dock = DockStyle.Fill;
             ProductDataGridView.EnableHeadersVisualStyles = false;
             ProductDataGridView.GridColor = SystemColors.ControlDark;
@@ -180,13 +231,13 @@
             ProductDataGridView.Margin = new Padding(0);
             ProductDataGridView.Name = "ProductDataGridView";
             ProductDataGridView.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(24, 73, 44);
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(24, 73, 44);
-            ProductDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = SystemColors.Control;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = Color.FromArgb(24, 73, 44);
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(24, 73, 44);
+            ProductDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             ProductDataGridView.RowHeadersVisible = false;
             ProductDataGridView.RowHeadersWidth = 51;
             ProductDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -209,6 +260,7 @@
             // 
             // productIDDataGridViewTextBoxColumn
             // 
+            productIDDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStrip1;
             productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
             productIDDataGridViewTextBoxColumn.HeaderText = "Product ID";
             productIDDataGridViewTextBoxColumn.MinimumWidth = 6;
@@ -216,6 +268,32 @@
             productIDDataGridViewTextBoxColumn.ReadOnly = true;
             productIDDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.False;
             productIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.AutoSize = false;
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { filterToolStripMenuItem, filterToolStripMenuItem1, toolStripTextBox1 });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(300, 80);
+            // 
+            // filterToolStripMenuItem
+            // 
+            filterToolStripMenuItem.Name = "filterToolStripMenuItem";
+            filterToolStripMenuItem.Size = new Size(160, 24);
+            filterToolStripMenuItem.Text = "Filter";
+            filterToolStripMenuItem.ToolTipText = "Product ID";
+            // 
+            // filterToolStripMenuItem1
+            // 
+            filterToolStripMenuItem1.Name = "filterToolStripMenuItem1";
+            filterToolStripMenuItem1.Size = new Size(160, 24);
+            filterToolStripMenuItem1.Text = "Filter";
+            // 
+            // toolStripTextBox1
+            // 
+            toolStripTextBox1.Name = "toolStripTextBox1";
+            toolStripTextBox1.Size = new Size(100, 27);
             // 
             // ProductName
             // 
@@ -240,11 +318,11 @@
             // updateBtn
             // 
             updateBtn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(8, 127, 91);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(230, 252, 245);
-            updateBtn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(8, 127, 91);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(230, 252, 245);
+            updateBtn.DefaultCellStyle = dataGridViewCellStyle7;
             updateBtn.FlatStyle = FlatStyle.Flat;
             updateBtn.HeaderText = "";
             updateBtn.MinimumWidth = 6;
@@ -257,11 +335,11 @@
             // deleteBtn
             // 
             deleteBtn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(224, 49, 49);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 245, 245);
-            deleteBtn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(224, 49, 49);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(255, 245, 245);
+            deleteBtn.DefaultCellStyle = dataGridViewCellStyle8;
             deleteBtn.FlatStyle = FlatStyle.Flat;
             deleteBtn.HeaderText = "";
             deleteBtn.MinimumWidth = 6;
@@ -333,6 +411,8 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)ProductDataGridView).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
+            contextMenuStrip1.PerformLayout();
             tableLayoutPanelSelect.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -353,11 +433,18 @@
         private Label label2;
         private HScrollBar hPageScrollBar;
         private TextBox txbPage;
+        private ContextMenuStrip contextMenuStrip1;
         private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+        private ToolStripMenuItem filterToolStripMenuItem;
+        private ToolStripMenuItem filterToolStripMenuItem1;
         private DataGridViewTextBoxColumn ProductName;
         private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private DataGridViewButtonColumn updateBtn;
         private DataGridViewButtonColumn deleteBtn;
+        private Button btnMenuProductID;
+        private Button btnMenuProductDescription;
+        private Button btnMenuProductName;
+        private ToolStripTextBox toolStripTextBox1;
     }
 }

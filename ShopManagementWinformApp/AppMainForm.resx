@@ -123,6 +123,46 @@
   <metadata name="mySqlConnection1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>181, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnMenuProductDescription.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAVtJREFUWEftlcFKw0AQhmOrQu9C8SQ+kae8Qt4heEhCkos2eBAL0VoU9BJF8GEE
+        T+LJ14j/6Cyk22m6m6Y97Qc/ZLczsx8JaTyHw+HYhDAMx3Vd7/GyE1EU7SNHvLQjTdPTOI6/MWCGDHjb
+        iiAIDtBbIZ9Zlh3zthlKAKk597YiJIC+FzXDSgQCJ2j6Us2NGIvoAo185Hk+5jKZFoG/QGK+TqQsS3oE
+        r1I/p10EzROhaSGoeVglwgJvUp+W8/8Ogaqqhih41hqWIomYCiRJMl37xpEIhj1JA5ohEd/3h9SD60MT
+        AeQG5WavPA1Hw6M2YCkkWxTFCNfv+m9CrjHa7j/HVAT5Efb02AsoLETa0l1AgVs+QObCcJNc8ZjN6SjS
+        n4DCUqR/AQWJ4IA77cCFoGbC5duD78itJIBcctn2WSGyOwEFieDgkgRwfcHbu4e+AfgWnPHS4XD0jOf9
+        AiOBVWhhObAAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnMenuProductName.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAVtJREFUWEftlcFKw0AQhmOrQu9C8SQ+kae8Qt4heEhCkos2eBAL0VoU9BJF8GEE
+        T+LJ14j/6Cyk22m6m6Y97Qc/ZLczsx8JaTyHw+HYhDAMx3Vd7/GyE1EU7SNHvLQjTdPTOI6/MWCGDHjb
+        iiAIDtBbIZ9Zlh3zthlKAKk597YiJIC+FzXDSgQCJ2j6Us2NGIvoAo185Hk+5jKZFoG/QGK+TqQsS3oE
+        r1I/p10EzROhaSGoeVglwgJvUp+W8/8Ogaqqhih41hqWIomYCiRJMl37xpEIhj1JA5ohEd/3h9SD60MT
+        AeQG5WavPA1Hw6M2YCkkWxTFCNfv+m9CrjHa7j/HVAT5Efb02AsoLETa0l1AgVs+QObCcJNc8ZjN6SjS
+        n4DCUqR/AQWJ4IA77cCFoGbC5duD78itJIBcctn2WSGyOwEFieDgkgRwfcHbu4e+AfgWnPHS4XD0jOf9
+        AiOBVWhhObAAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnMenuProductID.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAVtJREFUWEftlcFKw0AQhmOrQu9C8SQ+kae8Qt4heEhCkos2eBAL0VoU9BJF8GEE
+        T+LJ14j/6Cyk22m6m6Y97Qc/ZLczsx8JaTyHw+HYhDAMx3Vd7/GyE1EU7SNHvLQjTdPTOI6/MWCGDHjb
+        iiAIDtBbIZ9Zlh3zthlKAKk597YiJIC+FzXDSgQCJ2j6Us2NGIvoAo185Hk+5jKZFoG/QGK+TqQsS3oE
+        r1I/p10EzROhaSGoeVglwgJvUp+W8/8Ogaqqhih41hqWIomYCiRJMl37xpEIhj1JA5ohEd/3h9SD60MT
+        AeQG5WavPA1Hw6M2YCkkWxTFCNfv+m9CrjHa7j/HVAT5Efb02AsoLETa0l1AgVs+QObCcJNc8ZjN6SjS
+        n4DCUqR/AQWJ4IA77cCFoGbC5duD78itJIBcctn2WSGyOwEFieDgkgRwfcHbu4e+AfgWnPHS4XD0jOf9
+        AiOBVWhhObAAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>361, 17</value>
+  </metadata>
   <metadata name="ProductName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -133,6 +173,6 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>121</value>
   </metadata>
 </root>

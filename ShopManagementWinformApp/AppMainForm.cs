@@ -183,7 +183,10 @@ namespace ShopManagementWinformApp
 
         private void ChangePageValue(long? value)
         {
-            _page = value!.Value;
+            if (value == null && _products!.Count() == 15)
+                _page += 1;
+            else
+                _page = value.Value;
             hPageScrollBar.Value = (int)_page;
             txbPage.Text = (hPageScrollBar.Value + 1).ToString();
         }
@@ -207,6 +210,16 @@ namespace ShopManagementWinformApp
         {
             InformationPopUpForm informationPopUpForm = new(message);
             informationPopUpForm.Show(this);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip1.Show((System.Windows.Forms.Button)sender, new Point(0, btnMenuProductName.Height));
         }
     }
 }
