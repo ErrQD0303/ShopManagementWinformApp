@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShopManagementWinformApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ef5d695a8c56f4e23d69a372ff99626a8740a9a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+893cd8eb5fecf95738560b5352cf536f6d8d4825")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShopManagementWinformApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShopManagementWinformApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
